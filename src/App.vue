@@ -26,6 +26,6 @@ export default {
   text-align: center;
 }
 .container {
-  padding: 50px;
+  padding: 15px;
 }
 </style>
