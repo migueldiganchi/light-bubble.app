@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <Navigator />
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+import Navigator from '@/components/Navigator'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Navigator
+  }
 }
 </script>
 
@@ -17,7 +24,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.container {
+  padding: 50px;
 }
 </style>
