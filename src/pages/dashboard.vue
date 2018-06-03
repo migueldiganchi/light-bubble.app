@@ -1,27 +1,23 @@
 <template lang="html">
   <div class="dashboard">
-    <h1>This is the user dashboard page</h1>
-    <p>
-      <div class="text-center my-3">
-        <b-btn v-b-popover.hover="'I am popover content!'"
-          title="Popover Title">Hover Me</b-btn>
-      </div>
-    </p>
-    <p>
-      <b-dropdown id="ddown1" text="Dropdown Button" class="m-md-2">
-       <b-dropdown-item>First Action</b-dropdown-item>
-       <b-dropdown-item>Second Action</b-dropdown-item>
-       <b-dropdown-item>Third Action</b-dropdown-item>
-       <b-dropdown-divider></b-dropdown-divider>
-       <b-dropdown-item>Something else here...</b-dropdown-item>
-       <b-dropdown-item disabled>Disabled action</b-dropdown-item>
-     </b-dropdown>
-    </p>
+    <h1>Crea tu burbuja</h1>
+    <b-container class="bv-example-row">
+      <b-row align-h="center">
+        <b-col cols="5">
+            <Form />
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
+import Form from '@/components/Form'
+
 export default {
+  components: {
+    Form
+  }
 }
 </script>
 

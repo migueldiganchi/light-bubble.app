@@ -1,13 +1,13 @@
 <template lang="html">
-  <b-navbar toggleable="md" type="dark" variant="info">
+  <b-navbar toggleable="md" type="dark" variant="dark">
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-navbar-brand to="/">
-      Canvanizer
+      La burbuja brillante
     </b-navbar-brand>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
 
-        <b-nav-item to="dashboard">Panel de control</b-nav-item>
+        <b-nav-item to="dashboard">Publica tu burbuja</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
