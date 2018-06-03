@@ -17,14 +17,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css" scoped>
-h1 {
-  padding: 30px;
-  margin: 0;
-}
-h4 {
-  padding: 30px;
-  margin-top: 10px;
-}
-</style>
