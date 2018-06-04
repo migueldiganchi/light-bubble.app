@@ -2,8 +2,6 @@
   <div>
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group id="exampleInputGroup1"
-        label="Email address:"
-        label-for="exampleInput1"
         description="We'll never share your email with anyone else.">
         <b-form-input id="exampleInput1"
           type="email"
@@ -12,9 +10,13 @@
           placeholder="Enter email">
         </b-form-input>
       </b-form-group>
-      <b-form-group id="exampleInputGroup2"
-        label="Your Name:"
-        label-for="exampleInput2">
+      <b-form-group>
+        <b-form-file
+          v-model="file"
+          placeholder="Bubble file..."
+          class="border-primary"></b-form-file>
+      </b-form-group>
+      <b-form-group id="exampleInputGroup2">
         <b-form-input id="exampleInput2"
           type="text"
           v-model="form.name"
@@ -22,9 +24,7 @@
           placeholder="Enter name">
         </b-form-input>
       </b-form-group>
-      <b-form-group id="exampleInputGroup3"
-        label="Food:"
-        label-for="exampleInput3">
+      <b-form-group id="exampleInputGroup3">
         <b-form-select id="exampleInput3"
           :options="foods"
           required
@@ -38,17 +38,17 @@
         </b-form-checkbox-group>
       </b-form-group>
 
-      <b-form-group label="Descripción"
-        label-for="textarea1">
+      <b-form-group>
         <b-form-textarea id="textarea1"
           v-model="text"
-          placeholder="Enter something"
+          placeholder="Buble descriptionSb"
           :rows="3"
           :max-rows="6"></b-form-textarea>
       </b-form-group>
-
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <div class="buttons">
+        <b-button type="submit" variant="primary">Send</b-button>
+        <b-button type="reset" variant="danger">Cancel</b-button>
+      </div>
     </b-form>
   </div>
 </template>
@@ -64,7 +64,7 @@ export default {
         checked: []
       },
       foods: [
-        { text: 'Select One', value: null },
+        { text: 'Tipo', value: null },
         'Carrots', 'Beans', 'Tomatoes', 'Corn'
       ],
       show: true
@@ -89,3 +89,15 @@ export default {
   }
 }
 </script>
+
+<style media="screen">
+.custom-file-label::after {
+  content: "Up";
+}
+.buttons {
+  margin-top: 30px;
+}
+.buttons button {
+  margin: 5px;
+}
+</style>
