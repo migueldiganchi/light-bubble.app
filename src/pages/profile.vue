@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="profile">
-    <h3>User profile</h3>
+    <h1>User profile</h1>
     <div class="content">
       user profile content
     </div>

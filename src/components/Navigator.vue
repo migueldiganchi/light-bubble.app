@@ -7,9 +7,9 @@
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
         <b-nav-item to="/bubbles">
-          Explora ideas
+          Explora
         </b-nav-item>
-        <b-nav-item to="/dashboard">
+        <b-nav-item to="/new">
           Publica tu burbuja
         </b-nav-item>
       </b-navbar-nav>
@@ -20,7 +20,7 @@
           <b-form-input
             class="mr-sm-2"
             type="text"
-            placeholder="Encuentra tu burbuja"/>
+            placeholder="¿Qué deseas encontrar?"/>
           <b-button
             class="my-2 my-sm-0"
             type="submit">Buscar</b-button>
@@ -31,7 +31,8 @@
           <template slot="button-content">
             <em>User</em>
           </template>
-          <b-dropdown-item to="/profile">Profile</b-dropdown-item>
+          <b-dropdown-item to="/profile">Perfil</b-dropdown-item>
+          <b-dropdown-item to="/dashboard">Panel de control</b-dropdown-item>
           <b-dropdown-item href="#">Signout</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>

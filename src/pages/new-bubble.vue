@@ -1,8 +1,12 @@
 <template lang="html">
-  <div class="dashboard">
-    <h1>Panel de control</h1>
+  <div class="new-bubble">
+    <h1>Crea tu burbuja</h1>
     <b-container class="bv-example-row">
-      Contenido del panel de control
+      <b-row align-h="center">
+        <b-col cols="5">
+            <Form />
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>

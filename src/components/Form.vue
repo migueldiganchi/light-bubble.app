@@ -12,7 +12,7 @@
       </b-form-group>
       <b-form-group>
         <b-form-file
-          v-model="file"
+          v-model="form.file"
           placeholder="Bubble file..."
           class="border-primary"></b-form-file>
       </b-form-group>
@@ -40,7 +40,7 @@
 
       <b-form-group>
         <b-form-textarea id="textarea1"
-          v-model="text"
+          v-model="form.title"
           placeholder="Buble descriptionSb"
           :rows="3"
           :max-rows="6"></b-form-textarea>
@@ -61,6 +61,7 @@ export default {
         email: '',
         name: '',
         food: null,
+        file: null,
         checked: []
       },
       foods: [
