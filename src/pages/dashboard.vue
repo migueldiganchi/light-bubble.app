@@ -4,64 +4,11 @@
       <b-row>
         <b-col col lg="6">
           <h4>Ideas en las que participo</h4>
-          <b-card title="Title"
-            footer-tag="footer">
-            <em slot="footer">Footer Slot</em>
-            <p class="card-text">Header and footers using slots.</p>
-            <b-button href="#" size="sm" variant="primary">
-              Participar
-            </b-button>
-            <b-button href="#" size="sm">
-              No me gusta
-            </b-button>
-          </b-card>
-          <b-card title="Title"
-            footer-tag="footer">
-            <em slot="footer">Footer Slot</em>
-            <p class="card-text">Header and footers using slots.</p>
-            <b-button href="#" size="sm" variant="primary">
-              Participar
-            </b-button>
-            <b-button href="#" size="sm">
-              No me gusta
-            </b-button>
-          </b-card>
+          <BubbleList :bubbles="myBubbles" />
         </b-col>
         <b-col col lg="6">
           <h4>Ideas creadas por mi</h4>
-          <b-card title="Title"
-            footer-tag="footer">
-            <em slot="footer">Footer Slot</em>
-            <p class="card-text">Header and footers using slots.</p>
-            <b-button href="#" size="sm" variant="primary">
-              Participar
-            </b-button>
-            <b-button href="#" size="sm">
-              No me gusta
-            </b-button>
-          </b-card>
-          <b-card title="Title"
-            footer-tag="footer">
-            <em slot="footer">Footer Slot</em>
-            <p class="card-text">Header and footers using slots.</p>
-            <b-button href="#" size="sm" variant="primary">
-              Participar
-            </b-button>
-            <b-button href="#" size="sm">
-              No me gusta
-            </b-button>
-          </b-card>
-          <b-card title="Title"
-            footer-tag="footer">
-            <em slot="footer">Footer Slot</em>
-            <p class="card-text">Header and footers using slots.</p>
-            <b-button href="#" size="sm" variant="primary">
-              Participar
-            </b-button>
-            <b-button href="#" size="sm">
-              No me gusta
-            </b-button>
-          </b-card>
+          <BubbleList :bubbles="otherBubbles" />
         </b-col>
       </b-row>
     </b-container>
@@ -70,10 +17,23 @@
 
 <script>
 import Form from '@/components/Form'
+import BubbleList from '@/components/BubbleList'
 
 export default {
   components: {
-    Form
+    Form,
+    BubbleList
+  },
+  computed: {
+    myBubbles () {
+      return this.$store.getters.bubbles
+    },
+    otherBubbles () {
+      return this.$store.getters.bubbles
+    }
+  },
+  created () {
+    this.$store.dispatch('loadBubbles')
   }
 }
 </script>

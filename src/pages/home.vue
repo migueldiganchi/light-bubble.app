@@ -14,6 +14,9 @@ import Carousel from '@/components/Carousel'
 export default {
   components: {
     Carousel
+  },
+  created () {
+    console.log('this.$store', this.$store)
   }
 }
 </script>

@@ -1,12 +1,19 @@
 <template lang="html">
   <router-link :to="'/bubble/' + bubble.id" class="bubble-item">
-    <b-card img-src="https://placekitten.com/1000/300"
+    <b-card
+      img-src="https://placekitten.com/1000/300"
       img-alt="Card image"
-      img-top>
-      <h4>{{ bubble.title }}</h4>
-      <p class="card-text">
-        {{ bubble.description }}
-      </p>
+      img-top
+      title="Title"
+      footer-tag="footer">
+      <em slot="footer">Footer Slot</em>
+      <p class="card-text">Header and footers using slots.</p>
+      <b-button href="#" size="sm" variant="primary">
+        Participar
+      </b-button>
+      <b-button href="#" size="sm">
+        No me gusta
+      </b-button>
     </b-card>
   </router-link>
 </template>
