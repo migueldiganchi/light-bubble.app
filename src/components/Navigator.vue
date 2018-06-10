@@ -29,7 +29,14 @@
         <b-nav-item-dropdown right>
           <!-- Using button-content slot -->
           <template slot="button-content">
-            <em>User</em>
+            <b-img
+              rounded="circle"
+              blank
+              width="36"
+              height="36"
+              blank-color="#777"
+              alt="img"
+              class="m-0" />
           </template>
           <b-dropdown-item to="/profile">Perfil</b-dropdown-item>
           <b-dropdown-item to="/dashboard">Panel de control</b-dropdown-item>
@@ -44,7 +51,3 @@
 export default {
 }
 </script>
-
-<style lang="css" scoped>
-
-</style>

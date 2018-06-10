@@ -2,7 +2,7 @@
   <div class="bubble-list">
     <b-card-group deck>
     <b-row>
-      <b-col v-for="bubble in bubbles">
+      <b-col v-for="bubble in bubbles" :key="bubble.id">
           <BubbleItemList
             :bubble="bubble" />
       </b-col>
