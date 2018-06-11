@@ -1,14 +1,17 @@
 <template lang="html">
   <div class="dashboard">
     <b-container class="sections-container">
+      <b-row class="mine">
+        <b-col>
+          <h4>Ideas creadas por mi </h4>
+          <BubbleList :bubbles="otherBubbles" />
+        </b-col>
+      </b-row>
+
       <b-row>
-        <b-col col lg="6">
+        <b-col>
           <h4>Ideas en las que participo</h4>
           <BubbleList :bubbles="myBubbles" />
-        </b-col>
-        <b-col col lg="6">
-          <h4>Ideas creadas por mi</h4>
-          <BubbleList :bubbles="otherBubbles" />
         </b-col>
       </b-row>
     </b-container>
@@ -23,6 +26,11 @@ export default {
   components: {
     Form,
     BubbleList
+  },
+  data () {
+    return {
+      currentPage: 1
+    }
   },
   computed: {
     myBubbles () {
@@ -39,8 +47,7 @@ export default {
 </script>
 
 <style>
-.dashboard .card {
-  margin-bottom: 21px
+.dashboard .mine {
+  margin-bottom: 30px;
 }
-
 </style>

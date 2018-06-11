@@ -1,10 +1,21 @@
 <template lang="html">
   <div id="home">
-    <h1>
-      Expande tus ideas
-    </h1>
-    <Carousel />
-    <h4>Crea tu propio servicio web aquí</h4>
+    <b-container>
+      <b-jumbotron
+        header="Ideas que mejoran el mundo"
+        lead="¿Cómo piensas que puedes mejorar el mundo?" >
+        <p>Comienza Publica tu idea</p>
+        <b-btn variant="primary" href="#">
+          Más información
+        </b-btn>
+      </b-jumbotron>
+
+      <h4>
+        Expande tus ideas
+      </h4>
+      <Carousel />
+      <h4>Crea tu propio servicio web aquí</h4>
+    </b-container>
   </div>
 </template>
 
