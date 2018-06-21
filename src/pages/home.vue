@@ -11,7 +11,8 @@
       </b-jumbotron>
 
       <h4>
-        Expande tus ideas
+        Publica ideas para mejorar el mundo. Solo registrate
+        y publica algo que pienses que pueda ayudar a los demás.
       </h4>
       <Carousel />
       <h4>Crea tu propio servicio web aquí</h4>
