@@ -1,10 +1,8 @@
 <template lang="html">
-  <b-container class="bubbles">
-    <h4>Ideas</h4>
-    <div class="bubbles-list-container">
-      <BubbleList :bubbles="allBubbles" />
-    </div>
-  </b-container>
+  <div class="container">
+    <h4 class="text-center">Ideas</h4>
+    <BubbleList :bubbles="allBubbles" />
+  </div>
 </template>
 
 <script>

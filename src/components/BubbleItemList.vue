@@ -1,13 +1,14 @@
 <template lang="html">
-  <router-link :to="'/bubble/' + bubble.id" class="bubble-item">
-    <b-card
+    <b-card overlay
       img-src="https://placekitten.com/1000/300"
       img-alt="Card image"
       img-top
-      title="Title"
-      footer-tag="footer">
-      <em slot="footer">Footer Slot</em>
-      <p class="card-text">Header and footers using slots.</p>
+      footer-tag="footer"
+      class="card">
+      <router-link :to="'/bubble/' + bubble.id" class="bubble-item">
+        <h2>TItle</h2>
+        <p class="card-text">Header and footers using slots.</p>
+      </router-link>
       <b-button href="#" size="sm" variant="primary">
         Participar
       </b-button>
@@ -15,7 +16,6 @@
         No me gusta
       </b-button>
     </b-card>
-  </router-link>
 </template>
 
 <script>
@@ -28,3 +28,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.card {
+  margin-bottom: 10px !important;
+}
+</style>

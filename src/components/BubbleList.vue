@@ -1,13 +1,14 @@
 <template lang="html">
   <div class="bubble-list">
-    <b-card-group class="bubble-list-body" deck>
-      <b-row>
-        <b-col v-for="bubble in bubbles" :key="bubble.id">
+    <div class="bubble-list-" deck>
+      <b-row v-for="bubble in bubbles" 
+        :key="bubble.id">
+        <b-col>
             <BubbleItemList
               :bubble="bubble" />
         </b-col>
       </b-row>
-    </b-card-group>
+    </div>
     <b-pagination class="pagination"
       align="center"
       size="md"
@@ -29,6 +30,11 @@ export default {
     bubbles: {
       type: Array,
       required: true
+    }
+  },
+  data () {
+    return {
+      currentPage: 2
     }
   }
 }

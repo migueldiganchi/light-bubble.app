@@ -1,4 +1,4 @@
-import bubblesData from '../../data/bubbles-data'
+import axios from 'axios'
 
 const state = {
   bubbles: []
@@ -12,6 +12,14 @@ const mutations = {
 
 const actions = {
   loadBubbles: ({commit}) => {
+    axios.get('/bubbles.json')
+      .then((response) => {
+        // console.log(response)
+        commit('SET_BUBBLES', response.data)
+      })
+      .catch((error) => {
+        console.info('error', error)
+      })
     commit('SET_BUBBLES', bubblesData)
   }
 }
