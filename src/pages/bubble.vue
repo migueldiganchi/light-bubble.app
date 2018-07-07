@@ -1,20 +1,22 @@
 <template lang="html">
-  <div class="bubble">
-    <h1>{{ bubble.title }}</h1>
-    <p>{{ bubble.description }}</p>
+  <div v-if="bubble" class="bubble">
+    <b-jumbotron fluid>
+    <h1>{{ bubble.name }}</h1>
+    <p>{{ bubble.email }}</p>
+    </b-jumbotron>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      bubble: {
-        id: 1,
-        title: 'Some bubble title',
-        description: 'Some bubble description',
-      }
+  computed: {
+    bubble () {
+      return this.$store.getters.bubble
     }
+  },
+  created () {
+    let bubbleId = this.$route.params.id
+    this.$store.dispatch('getBubble', bubbleId)
   }
 }
 </script>

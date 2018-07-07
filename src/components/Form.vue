@@ -16,6 +16,12 @@
           placeholder="Bubble file..."
           class="border-primary"></b-form-file>
       </b-form-group>
+      <b-form-group>
+        <b-form-file
+          v-model="bubble.media_url"
+          placeholder="Image url"
+          class="border-primary"></b-form-file>
+      </b-form-group>
       <b-form-group id="exampleInputGroup2">
         <b-form-input id="exampleInput2"
           type="text"
@@ -46,9 +52,9 @@
           :rows="3"
           :max-rows="6"></b-form-textarea>
       </b-form-group>
-      <div class="buttons">
-        <b-button type="submit" variant="primary">Send</b-button>
+      <div class="buttons text-center">
         <b-button type="reset" variant="danger">Cancel</b-button>
+        <b-button type="submit" variant="primary">Send</b-button>
       </div>
     </b-form>
   </div>
@@ -65,6 +71,7 @@ export default {
         name: '',
         food: null,
         file: null,
+        media_url: '',
         checked: []
       },
       foods: [
