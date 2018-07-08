@@ -1,61 +1,44 @@
 <template>
   <div>
     <b-form @submit.prevent="onSubmit" @reset="onReset" v-if="show">
-      <b-form-group id="exampleInputGroup1"
-        description="We'll never share your email with anyone else.">
-        <b-form-input id="exampleInput1"
-          type="email"
-          v-model="bubble.email"
-          required
-          placeholder="Enter email">
-        </b-form-input>
-      </b-form-group>
-      <b-form-group>
-        <b-form-file
-          v-model="bubble.file"
-          placeholder="Bubble file..."
-          class="border-primary"></b-form-file>
-      </b-form-group>
-      <b-form-group>
-        <b-form-file
-          v-model="bubble.media_url"
-          placeholder="Image url"
-          class="border-primary"></b-form-file>
-      </b-form-group>
+
       <b-form-group id="exampleInputGroup2">
         <b-form-input id="exampleInput2"
           type="text"
-          v-model="bubble.name"
+          v-model="bubble.title"
           required
-          placeholder="Enter name">
+          placeholder="Idea title">
         </b-form-input>
-      </b-form-group>
-      <b-form-group id="exampleInputGroup3">
-        <b-form-select id="exampleInput3"
-          :options="foods"
-          required
-          v-model="bubble.food">
-        </b-form-select>
-      </b-form-group>
-      <b-form-group id="exampleGroup4">
-        <b-form-checkbox-group 
-          v-model="bubble.checked" id="exampleChecks">
-          <b-form-checkbox value="me">Check me out</b-form-checkbox>
-          <b-form-checkbox value="that">Check that out</b-form-checkbox>
-        </b-form-checkbox-group>
       </b-form-group>
 
       <b-form-group>
         <b-form-textarea id="textarea1"
-          v-model="bubble.title"
+          v-model="bubble.description"
           placeholder="Buble description"
           :rows="3"
           :max-rows="6"></b-form-textarea>
       </b-form-group>
+
+      <b-form-group>
+        <b-form-input
+          v-model="bubble.media_url"
+          placeholder="Image url"
+          class="border-primary"></b-form-input>
+      </b-form-group>
+
+      <b-form-group id="exampleInputGroup3">
+        <b-form-select id="exampleInput3"
+          :options="types"
+          required
+          v-model="bubble.type">
+        </b-form-select>
+      </b-form-group>
+
       <div class="buttons text-center">
         <b-button type="reset" variant="danger">Cancel</b-button>
-        <b-button type="submit" variant="primary">Send</b-button>
+        <b-button type="submit" variant="primary">Create</b-button>
       </div>
+
     </b-form>
   </div>
 </template>
@@ -67,16 +50,14 @@ export default {
   data () {
     return {
       bubble: {
-        email: '',
-        name: '',
-        food: null,
-        file: null,
+        title: '',
+        description: '',
         media_url: '',
-        checked: []
+        type: null
       },
-      foods: [
+      types: [
         { text: 'Tipo', value: null },
-        'Carrots', 'Beans', 'Tomatoes', 'Corn'
+        'Personas', 'Animales', '', 'Corn'
       ],
       show: true
     }
@@ -85,7 +66,8 @@ export default {
     onSubmit (evt) {
       axios.post('/bubbles.json', this.bubble)
         .then((response) => {
-          console.log('response', response)
+          var bubbleId = response.data.name;
+          this.$router.push('/bubble/' + bubbleId)
         })
         .catch((error) => {
           console.info('error', error)
@@ -94,10 +76,10 @@ export default {
     onReset (evt) {
       evt.preventDefault();
       /* Reset our form values */
-      this.bubble.email = '';
       this.bubble.name = '';
-      this.bubble.food = null;
-      this.bubble.checked = [];
+      this.bubble.description = '';
+      this.bubble.media_url = '';
+      this.bubble.type = null;
       /* Trick to reset/clear native browser form validation state */
       this.show = false;
       this.$nextTick(() => { this.show = true });

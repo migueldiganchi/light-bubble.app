@@ -57,4 +57,7 @@ export default {
   .carousel-container {
     margin-bottom: 30px;
   }
+  #home .card {
+    height: 180px;
+  }
 </style>

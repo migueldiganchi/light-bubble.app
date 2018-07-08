@@ -1,9 +1,17 @@
 <template lang="html">
   <div v-if="bubble" class="bubble">
     <b-jumbotron fluid>
-    <h1>{{ bubble.name }}</h1>
-    <p>{{ bubble.email }}</p>
+      <h1>{{ bubble.title }}</h1>
     </b-jumbotron>
+
+    <b-container class="media-container">
+      <img :src="bubble.media_url"
+        style="width: 39%;">
+    </b-container>
+
+    <b-container>
+      <p>{{ bubble.description }}</p>
+    </b-container>
   </div>
 </template>
 
@@ -20,3 +28,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .media-container {
+    margin-bottom: 21px;
+  }
+</style>
