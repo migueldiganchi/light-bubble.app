@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="new-bubble">
     <h1 class="text-center">
       Crea tu idea

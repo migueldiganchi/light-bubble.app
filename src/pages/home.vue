@@ -4,12 +4,13 @@
       class="presentation"
       fluid
       header="Ideas que mejoran el mundo"
-      lead="¿Cómo piensas que puedes mejorar el mundo?" >
-      <b-btn variant="primary" href="#">
-        Registrarme
+      lead="¿Cómo piensas que puedes mejorar el mundo?">
+      <b-btn to="/signup"
+        variant="primary" href="#">
+        Registrar mi cuenta
       </b-btn>
-      <b-btn href="#">
-        Explorar ideas
+      <b-btn to="/signin">
+        Ingresar
       </b-btn>
     </b-jumbotron>
 
@@ -53,11 +54,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .carousel-container {
     margin-bottom: 30px;
   }
   #home .card {
     height: 180px;
+  }
+  .btn {
+    margin: auto 5px;
   }
 </style>

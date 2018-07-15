@@ -7,12 +7,17 @@ import bubbles from '@/pages/bubbles'
 import bubble from '@/pages/bubble'
 import profile from '@/pages/profile'
 
+import signin from '@/pages/auth/signin'
+import signup from '@/pages/auth/signup'
+
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
     { path: '/', name: 'home', component: home },
+    { path: '/signin', name: 'signin', component: signin },
+    { path: '/signup', name: 'signup', component: signup },
     { path: '/dashboard', name: 'dashboard', component: dashboard },
     { path: '/new', name: 'new', component: newBubble },
     { path: '/profile', name: 'profile', component: profile },
