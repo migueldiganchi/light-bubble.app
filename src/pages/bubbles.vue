@@ -2,12 +2,40 @@
   <b-container>
     <b-row>
       <b-col cols="3" class="column">
+        <b-input 
+          class="mb-2 mr-sm-2 mb-sm-0" 
+          id="inlineFormInputName2" 
+          placeholder="Search bubble" />
+        <br>
         <b-list-group>
-          <b-list-group-item href="#some-link">Awesome link</b-list-group-item>
-          <b-list-group-item href="#" active>Link with active state</b-list-group-item>
-          <b-list-group-item href="#">Action links are easy</b-list-group-item>
-          <b-list-group-item href="#foobar" disabled>Disabled link</b-list-group-item>
-        </b-list-group>
+        <b-list-group-item href="#" active class="flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Recent</h5>
+            <small>3 days ago</small>
+          </div>
+          <p class="mb-1 mt-2">
+            Most recent bubbles.
+          </p>
+        </b-list-group-item>
+        <b-list-group-item href="#" class="flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Trends</h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1 mt-2">
+            Most popular (voted by users) bubbles.
+          </p>
+        </b-list-group-item>
+        <b-list-group-item href="#" disabled class="flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">My lights</h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1 mt-2">
+            Your creativity must be exposed
+          </p>
+        </b-list-group-item>
+      </b-list-group>
       </b-col>
       <b-col>
         <BubbleList :bubbles="allBubbles" />
