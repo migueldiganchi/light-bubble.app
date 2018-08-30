@@ -19,12 +19,10 @@
 </template>
 
 <script>
-import Form from '@/components/Form'
 import BubbleList from '@/components/BubbleList'
 
 export default {
   components: {
-    Form,
     BubbleList
   },
   data () {

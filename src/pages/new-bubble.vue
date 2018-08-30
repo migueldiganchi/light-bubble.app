@@ -6,7 +6,7 @@
     <b-container class="bv-example-row">
       <b-row align-h="center">
         <b-col cols="5">
-            <Form />
+            <BubbleForm />
         </b-col>
       </b-row>
     </b-container>
@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import Form from '@/components/Form'
+import BubbleForm from '@/components/BubbleForm'
 
 export default {
   components: {
-    Form
+    BubbleForm
   }
 }
 </script>
