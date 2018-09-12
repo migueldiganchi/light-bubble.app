@@ -2,13 +2,13 @@ h1 {
   margin: 27px auto 21px;
 }
 
-h4 {
-  margin-bottom: 27px;
-}
-
 .p-10 {
   padding: 10 !important;
 }
+.m-top-10 {
+  margin-top: 10px;
+}
+
 .p-15 {
   padding: 15 !important;
 }
@@ -55,4 +55,14 @@ h4 {
   -moz-border-radius-topright: 10px !important;
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
+}
+
+.map-container {
+  border: dotted 1px #c9c9c9;
+  height: 180px;
+  margin: 15px auto;
+}
+
+.container {
+  padding: 30px;
 }

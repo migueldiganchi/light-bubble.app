@@ -1,21 +1,48 @@
 <template lang="html">
-  <div class="dashboard">
-    <b-container class="sections-container">
-      <b-row class="mine">
-        <b-col>
-          <h4>Ideas creadas por mi </h4>
-          <BubbleList :bubbles="otherBubbles" />
-        </b-col>
-      </b-row>
+  <b-container>
+    <b-row>
+      <b-col cols="3" class="p-10">
+        <b-list-group>
+          <b-list-group-item 
+            active
+            href="#some-link">
+            Mis luces
+          </b-list-group-item>
+          <b-list-group-item href="#">
+            Seguidores
+          </b-list-group-item>
+          <b-list-group-item href="#">
+            Siguiendo a
+          </b-list-group-item>
+          <b-list-group-item href="#foobar">
+            Configuración
+          </b-list-group-item>
+        </b-list-group>
+      </b-col>
 
-      <b-row>
-        <b-col>
-          <h4>Ideas en las que participo</h4>
+      <b-col class="p-10">
+        <div>
+          <h4 class="pull-left" style="display: inline-block;">
+            Mis luces
+          </h4>
+          <small class="pull-right">Mis luces</small>
           <BubbleList :bubbles="myBubbles" />
-        </b-col>
-      </b-row>
-    </b-container>
-  </div>
+        </div>
+      </b-col>
+
+      <b-col cols="4" class="p-10 text-center">
+        <h4>En mi ciudad</h4>
+        <div class="map-container radius-12">
+        </div>
+        <ul class="text-left rules">
+          <li>Enter our system</li>
+          <li>Select the search you want to do</li>
+          <li>Make de search gaining money with it</li>
+        </ul>
+      </b-col>
+
+    </b-row>  
+  </b-container>
 </template>
 
 <script>
@@ -41,7 +68,7 @@ export default {
   created () {
     this.$store.dispatch('loadBubbles')
   }
-}
+};
 </script>
 
 <style>
