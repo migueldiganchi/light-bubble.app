@@ -19,7 +19,7 @@
     </div>
 
     <b-container class="carousel-container">
-      <h4>
+      <h4 class="mb-4">
         Publica ideas para mejorar el mundo
       </h4>
       <Carousel class="carousel" />

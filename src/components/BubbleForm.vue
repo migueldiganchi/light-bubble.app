@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form @submit.prevent="onSubmit" @reset="onReset" v-if="show">
+    <b-form @submit.prevent="onSubmit" v-if="show">
 
       <b-form-group id="exampleInputGroup2">
         <b-form-input id="exampleInput2"
@@ -35,8 +35,16 @@
       </b-form-group>
 
       <div class="buttons text-center">
-        <b-button type="reset" variant="danger">Cancel</b-button>
-        <b-button type="submit" variant="primary">Create</b-button>
+        <b-button 
+          @click="goBack"
+          variant="danger">
+          Cancel
+          </b-button>
+        <b-button 
+          type="submit" 
+          variant="primary">
+          Create
+        </b-button>
       </div>
 
     </b-form>
@@ -73,16 +81,8 @@ export default {
           console.info('error', error)
         })
     },
-    onReset (evt) {
-      evt.preventDefault();
-      /* Reset our form values */
-      this.bubble.name = '';
-      this.bubble.description = '';
-      this.bubble.media_url = '';
-      this.bubble.type = null;
-      /* Trick to reset/clear native browser form validation state */
-      this.show = false;
-      this.$nextTick(() => { this.show = true });
+    goBack() {
+      this.$router.go(-1)
     }
   }
 }
