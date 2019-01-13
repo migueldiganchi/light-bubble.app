@@ -1,18 +1,22 @@
 <template lang="html">
   <div id="home">
-    <b-jumbotron
-      class="presentation"
-      fluid
-      header="Ideas que mejoran el mundo"
-      lead="¿Cómo piensas que puedes mejorar el mundo?">
-      <b-btn to="/signup"
-        variant="primary" href="#">
-        Registrar mi cuenta
-      </b-btn>
-      <b-btn to="/signin">
-        Ingresar
-      </b-btn>
-    </b-jumbotron>
+    <div class="text-center">
+      <b-jumbotron
+        id="presentation"
+        fluid
+        header="Mercado de ideas"
+        lead="Compra y vende los productos de tu imaginación">
+        <div class="text-holder">
+          <b-btn to="/signup"
+            variant="primary" href="#">
+            Registrar mi cuenta
+          </b-btn>
+          <b-btn to="/signin">
+            Ingresar
+          </b-btn>
+        </div>
+      </b-jumbotron>
+    </div>
 
     <b-container class="carousel-container">
       <h4>
