@@ -1,5 +1,5 @@
 <template lang="html">
-  <b-container>
+  <b-container class="mt-4 mb-2">
     <b-row>
       <b-col cols="3" class="p-10">
         <b-input 
