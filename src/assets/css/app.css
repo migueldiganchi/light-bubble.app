@@ -71,6 +71,10 @@ h1 {
   text-shadow: 1px 2px 3px #333;                                                                                                                                                                                                                                                                                                                                                              
 }
 
+#presentation p {
+  margin-bottom: 33px !important;
+}
+
 #presentation h1::before {
   content: '';
   display: block;
