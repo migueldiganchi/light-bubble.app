@@ -1,44 +1,44 @@
 <template lang="html">
   <b-container class="mt-4 mb-2">
     <b-row>
-      <b-col cols="3" class="p-10">
+      <b-col col lg="3" class="p-10">
         <b-input 
           class="mb-2 mr-sm-2 mb-sm-0" 
           id="inlineFormInputName2" 
-          placeholder="Search bubble" />
+          placeholder="Buscar" />
         <br>
         <b-list-group>
           <b-list-group-item href="#" active class="flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Recent</h5>
-              <small>3 days ago</small>
+              <h5 class="mb-1">Últimas</h5>
+              <small>143 publicadas</small>
             </div>
             <p class="mb-1 mt-2">
-              Most recent bubbles.
+              Publicadas recientemente
             </p>
           </b-list-group-item>
           <b-list-group-item href="#" class="flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Trends</h5>
-              <small class="text-muted">3 days ago</small>
+              <h5 class="mb-1">Tendencias</h5>
+              <small class="text-muted">15 publicadas</small>
             </div>
             <p class="mb-1 mt-2">
-              Most popular (voted by users) bubbles.
+              Las causas con mayor cantidad de votos acumulados
             </p>
           </b-list-group-item>
           <b-list-group-item href="#" disabled class="flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">My lights</h5>
-              <small class="text-muted">3 days ago</small>
+              <h5 class="mb-1">Por categoría</h5>
+              <small class="text-muted">323 publicadas</small>
             </div>
             <p class="mb-1 mt-2">
-              Your creativity must be exposed
+              Todas las causas categorizadas
             </p>
           </b-list-group-item>
         </b-list-group>
       </b-col>
 
-      <b-col class="p-10">
+      <b-col cik lg="5" class="p-10 light-list">
         <div>
           <h4 class="pull-left" style="display: inline-block;">
             Todas las luces
@@ -50,7 +50,7 @@
         </div>
       </b-col>
 
-      <b-col cols="4" class="p-10 text-center">
+      <b-col col lg="4" class="p-10 text-center map-container-holder">
         <h4>
           Luces en tu ciudad
         </h4>
@@ -91,5 +91,11 @@ export default {
   }
   .rules {
     margin-top: 21px;
+  }
+  @media screen and (max-width: 450px) {
+   .light-list,
+   .map-container-holder {
+      margin-top: 30px;
+    } 
   }
 </style>

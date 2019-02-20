@@ -1,8 +1,13 @@
-<template lang="html">
-  <b-container>
+<template>
+  <b-container class="mt-4 mb-2">
     <b-row>
-      <b-col cols="3" class="p-10">
+      <b-col col lg="3" class="p-10">
         <b-list-group>
+          <b-input 
+            class="mb-2 mr-sm-2 mb-sm-0" 
+            id="inlineFormInputName2" 
+            placeholder="Busca tu burbuja" />
+          <br>
           <b-list-group-item 
             active
             href="#some-link">
@@ -20,7 +25,7 @@
         </b-list-group>
       </b-col>
 
-      <b-col class="p-10">
+      <b-col col lg="5" id="light_list" class="p-10 light-list">
         <div>
           <h4 class="pull-left" style="display: inline-block;">
             Mis luces
@@ -30,7 +35,7 @@
         </div>
       </b-col>
 
-      <b-col cols="4" class="p-10 text-center">
+      <b-col col lg="4" class="p-10 text-center map-container-holder">
         <h4>En mi ciudad</h4>
         <div class="map-container radius-12">
         </div>
@@ -72,7 +77,15 @@ export default {
 </script>
 
 <style>
-.dashboard .mine {
-  margin-bottom: 30px;
-}
+  .light-list {
+    margin-top: 30px;
+  }
+
+  @media screen and (max-with: 450px) {
+    .light-list,
+    .map-container-holder {
+      border: solid 1px red !important;
+      margin-top: 30px;
+    }
+  }
 </style>

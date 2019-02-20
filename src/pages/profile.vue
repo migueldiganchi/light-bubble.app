@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="profile">
+  <div class="profile p-5">
     <div class="content text-center">
      <b-img rounded="circle"
       blank
@@ -9,14 +9,27 @@
       alt="img"
       class="m-1" />
       <h3 class="user-name">
-        Miguel Diganchi
+        {{ user.fullname }}
       </h3>
+      <p class="m-3">
+        {{ user.description }}
+      </p>
+
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      user: {
+        picture_url: '',
+        fullname: 'Miguel Diganchi',
+        description: 'Filantropo ocacional'
+      }
+    }
+  }
 }
 </script>
 
