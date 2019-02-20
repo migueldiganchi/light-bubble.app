@@ -7,6 +7,11 @@
             :bubble="bubble" />
       </b-col>
     </b-row>
+    <b-row>
+      <b-col class="text-center">
+        <span>Ver más causas</span>
+      </b-col>
+    </b-row>
   </div>
 </template>
 

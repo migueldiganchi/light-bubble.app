@@ -55,6 +55,8 @@
           Luces en tu ciudad
         </h4>
         <div class="map-container radius-12">
+          <google-map class="radius-12" 
+            name="explorer" />
         </div>
         <ul class="text-left rules">
           <li>Enter our system</li>
@@ -68,10 +70,17 @@
 
 <script>
 import BubbleList from '@/components/BubbleList';
+import AppGoogleMap from '@/components/UI/AppGoogleMap';
 
 export default {
   components: {
-    BubbleList
+    BubbleList,
+    'google-map': AppGoogleMap
+  },
+  data () {
+    return {
+      markers: [],
+    }
   },
   computed: {
     allBubbles () {
