@@ -1,37 +1,36 @@
 <template>
   <div v-if="bubble" class="bubble m-5">
     <b-row>
-      <b-col col lg="5">
+      <b-col col lg="4">
         <div class="body-container p-3">
-          <h3 class="body-title mb-3">
+          <h4 class="body-title mb-3">
             {{ bubble.title }}
-          </h3>
+          </h4>
           <p class="body-description">
             {{ bubble.description }}
           </p>
-          <div class="actions p-2">
+          <div class="actions p-1">
               <b-button variant="success">Votar</b-button>
+              <b-button variant="info">Donar</b-button>
               <b-button variant="danger">Denunciar</b-button>
-              <b-button variant="info">Enviar mensaje</b-button>
           </div>
         </div>
       </b-col>
-      <b-col col lg="7">
+      <b-col col lg="5">
         <div class="media-container">
           <app-carousel :items="mediaList" />
         </div>
       </b-col>
-    </b-row>
-    <b-row>
-      <b-col col lg="7">
-        <div class="bubble-list p-3">
-          <h5 class="mb-4 text-center">
-            Causas relacionadas
-          </h5>
-          <BubbleList :bubbles="relatedBubbles" />
+      <b-col col lg="3">
+        <div class="bubble-map-container">
+          <google-map  
+            name="dashboard"
+            class="radius-12" />
         </div>
       </b-col>
-      <b-col col lg="5">
+    </b-row>
+    <b-row>
+      <b-col col offset-lg="4" lg="5">
         <div class="comments-container p-3">
           <h5 class="mb-4 text-center">
             Comentarios
@@ -85,16 +84,29 @@
         </div>
       </b-col>
     </b-row>
+    <b-row>
+      <b-col v-if="relatedBubbles && relatedBubbles.length > 0" 
+        col offset-lg="5" lg="7">
+        <div class="bubble-list p-3">
+          <h5 class="mb-4 text-center">
+            Causas relacionadas
+          </h5>
+          <BubbleList :bubbles="relatedBubbles" />
+        </div>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
 import AppCarousel from '@/components/UI/AppCarousel';
+import AppGoogleMap from '@/components/UI/AppGoogleMap';
 import BubbleList from '@/components/BubbleList';
 
 export default {
   components: {
     'app-carousel': AppCarousel,
+    'google-map': AppGoogleMap,
     BubbleList
   },
   data () {
@@ -155,7 +167,8 @@ export default {
       return this.$store.getters.bubble
     },
     relatedBubbles () {
-      return this.$store.getters.bubbles
+      // return this.$store.getters.bubbles
+      return [];
     }
   },
   methods: {
@@ -207,5 +220,18 @@ export default {
   .comment-card * {
     color: #333 !important;
     text-shadow: 1px 1px 1px #c9c9c9 !important;
+  }
+  .bubble-map-container {
+    height: 210px;
+  }
+
+  .carousel img {
+    min-height: 350px;
+  }
+  .carousel img,
+  .carousel .carousel-inner {
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
   }
 </style>

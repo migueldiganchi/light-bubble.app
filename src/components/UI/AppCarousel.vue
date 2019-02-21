@@ -9,8 +9,9 @@
   >
     <b-carousel-slide 
       v-for="(item, key) in items"
+      class="radius-12" style="solid 3px orange;"
       :key="key"
-      :caption="item.title" 
+      :caption="item.title"
       :img-src="item.media_url" />
   </b-carousel>
 </template>
