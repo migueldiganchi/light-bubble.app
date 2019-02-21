@@ -19,10 +19,14 @@
     </div>
 
     <b-container class="carousel-container">
-      <h4 class="mb-4">
-        Publica ideas para mejorar el mundo
-      </h4>
-      <Carousel class="carousel" />
+      <b-row>
+        <b-col col lg="12">
+          <h4 class="mb-4">
+            Publica ideas para mejorar el mundo
+          </h4>
+          <Carousel name="home" class="carousel" />
+        </b-col>
+      </b-row>
     </b-container>
 
     <b-container class="last-bubbles">

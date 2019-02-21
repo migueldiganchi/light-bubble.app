@@ -27,10 +27,10 @@
 
       <b-col col lg="5" id="light_list" class="p-10 light-list">
         <div>
-          <h4 class="pull-left" style="display: inline-block;">
+          <h4 class="pull-left"  style="display: inline-block;">
             Mis luces
           </h4>
-          <small class="pull-right">Mis luces</small>
+          <small class="pull-right">Causas creadas por mi</small>
           <BubbleList :bubbles="myBubbles" />
         </div>
       </b-col>
@@ -38,12 +38,21 @@
       <b-col col lg="4" class="p-10 text-center map-container-holder">
         <h4>En mi ciudad</h4>
         <div class="map-container radius-12">
+          <google-map  
+            name="dashboard"
+            class="radius-12" />
         </div>
         <ul class="text-left rules">
-          <li>Enter our system</li>
-          <li>Select the search you want to do</li>
-          <li>Make de search gaining money with it</li>
+          <li>Encuentra las mejores causas</li>
+          <li>Vótalas dándole prioridad entre las demás</li>
+          <li>Comparte y da a conocer</li>
         </ul>
+        <div class="sharing-box mt-3">
+          <button type="button"
+            class="btn btn-success btn-lg btn-block">
+            Compartir
+          </button>
+        </div>
       </b-col>
 
     </b-row>  
@@ -52,10 +61,12 @@
 
 <script>
 import BubbleList from '@/components/BubbleList'
+import AppGoogleMap from '@/components/UI/AppGoogleMap'
 
 export default {
   components: {
-    BubbleList
+    BubbleList,
+    'google-map': AppGoogleMap
   },
   data () {
     return {
@@ -77,15 +88,13 @@ export default {
 </script>
 
 <style>
-  .light-list {
-    margin-top: 30px;
-  }
-
-  @media screen and (max-with: 450px) {
+  @media screen and (max-width: 450px) {
     .light-list,
     .map-container-holder {
-      border: solid 1px red !important;
       margin-top: 30px;
     }
+  }
+  .sharing-box {
+    padding: 3px;
   }
 </style>

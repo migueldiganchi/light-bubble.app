@@ -1,17 +1,18 @@
 <template>
-  <v-carousel
-    v-if="items.length > 0"
-    :hide-controls="hideControls"
-    :hide-delimiters="hideDelimiters"
-    :delimiter-icon="'airplay'"
-    :lazy="true">
-    <v-carousel-item v-for="(item, i) in items"
-      :src="item.src" 
-      :key="i"
-      >
-      <slot></slot>
-    </v-carousel-item>
-  </v-carousel>
+    <b-carousel
+    id="carousel-no-anim"
+    style="text-shadow: 0px 0px 2px #000;"
+    no-animation
+    :indicators="!hideControls"
+    img-width="1024"
+    img-height="480"
+  >
+    <b-carousel-slide 
+      v-for="(item, key) in items"
+      :key="key"
+      :caption="item.title" 
+      :img-src="item.media_url" />
+  </b-carousel>
 </template>
 
 <script>
