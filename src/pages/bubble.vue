@@ -1,7 +1,7 @@
 <template>
-  <div v-if="bubble" class="bubble m-5">
+  <div v-if="bubble" class="bubble py-3">
     <b-row>
-      <b-col col lg="4">
+      <b-col col offset-lg="2" lg="8">
         <div class="body-container p-3">
           <h4 class="body-title mb-3">
             {{ bubble.title }}
@@ -9,20 +9,24 @@
           <p class="body-description">
             {{ bubble.description }}
           </p>
-          <div class="actions p-1">
-              <b-button variant="success">Votar</b-button>
-              <b-button variant="info">Donar</b-button>
-              <b-button variant="danger">Denunciar</b-button>
-          </div>
         </div>
       </b-col>
-      <b-col col lg="5">
+    </b-row>
+    <b-row>  
+      <b-col col offset-lg="2" lg="8">
         <div class="media-container">
           <app-carousel :items="mediaList" />
         </div>
+        <div class="actions p-1 text-center">
+          <b-button variant="success">Votar</b-button>
+          <b-button variant="info">Donar</b-button>
+          <b-button variant="danger">Denunciar</b-button>
+        </div>
       </b-col>
-      <b-col col lg="3">
-        <div class="bubble-map-container">
+    </b-row>
+    <b-row>
+      <b-col col offset-lg="2" lg="8">
+        <div class="bubble-map-container mt-3 py-2">
           <google-map  
             name="dashboard"
             class="radius-12" />
@@ -30,9 +34,9 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col col offset-lg="4" lg="5">
-        <div class="comments-container p-3">
-          <h5 class="mb-4 text-center">
+      <b-col col offset-lg="2" lg="8">
+        <div class="comments-container">
+          <h5 class="mb-4 mt-3 text-center">
             Comentarios
           </h5>
           <div class="comment-list">
@@ -61,7 +65,7 @@
                   rows="2"
                   max-rows="6" />
               </b-form-group>
-              <b-form-group>
+              <b-form-group class="text-right">
                 <b-button 
                   type="button"
                   @click="showCommentForm = !showCommentForm">
@@ -75,12 +79,14 @@
               </b-form-group>
             </b-form>
           </div>
-          <b-button 
-            v-if="!showCommentForm"
-            @click="showCommentForm = !showCommentForm"
-            variant="outline-primary">
-            Comentar
-          </b-button>
+          <div class="text-center">
+            <b-button 
+              v-if="!showCommentForm"
+              @click="showCommentForm = !showCommentForm"
+              variant="outline-primary">
+              Comentar
+            </b-button>
+          </div>
         </div>
       </b-col>
     </b-row>
@@ -226,12 +232,18 @@ export default {
   }
 
   .carousel img {
-    min-height: 350px;
+    min-height: 360px;
   }
   .carousel img,
   .carousel .carousel-inner {
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
+  }
+
+  @media screen and (max-width: 450px) {
+   .carousel img {
+      min-height: 270px;
+    } 
   }
 </style>
