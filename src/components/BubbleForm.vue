@@ -1,7 +1,5 @@
 <template>
-  <div>
     <b-form @submit.prevent="onSubmit" v-if="show">
-
       <b-form-group id="exampleInputGroup2">
         <b-form-input id="exampleInput2"
           type="text"
@@ -21,9 +19,10 @@
 
       <b-form-group>
         <b-form-input
+          type="text"
           v-model="bubble.media_url"
           placeholder="Image url"
-          class="border-primary"></b-form-input>
+          required></b-form-input>
       </b-form-group>
 
       <b-form-group id="exampleInputGroup3">
@@ -34,7 +33,7 @@
         </b-form-select>
       </b-form-group>
 
-      <div class="buttons text-center">
+      <div class="mt-5 actions text-center">
         <b-button 
           @click="goBack"
           variant="danger">
@@ -46,9 +45,7 @@
           Create
         </b-button>
       </div>
-
     </b-form>
-  </div>
 </template>
 
 <script>
@@ -88,14 +85,8 @@ export default {
 }
 </script>
 
-<style media="screen">
+<style>
 .custom-file-label::after {
   content: "Up";
-}
-.buttons {
-  margin-top: 30px;
-}
-.buttons button {
-  margin: 5px;
 }
 </style>

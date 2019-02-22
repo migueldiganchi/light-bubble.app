@@ -36,7 +36,17 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col col offset-lg="2" lg="8">
+      <b-col col offset-lg="2" lg="3">
+        <h5 class="mb-4 mt-3 text-center">
+          Mensaje privado
+        </h5>
+        <div>
+          <contact-form 
+            :fromUserName="currentUser.name"
+            :contact="newContact" />
+        </div>
+      </b-col>
+      <b-col col lg="5">
         <div class="comments-container">
           <h5 class="mb-4 mt-3 text-center">
             Comentarios
@@ -109,12 +119,14 @@
 <script>
 import AppCarousel from '@/components/UI/AppCarousel';
 import AppGoogleMap from '@/components/UI/AppGoogleMap';
+import AppContactForm from '@/components/UI/AppContactForm';
 import BubbleList from '@/components/BubbleList';
 
 export default {
   components: {
     'app-carousel': AppCarousel,
     'google-map': AppGoogleMap,
+    'contact-form': AppContactForm,
     BubbleList
   },
   data () {
@@ -174,7 +186,13 @@ export default {
           username: 'Muya Diganchi',
           comment: 'Some text with some description of muya diganchi'
         }
-      ]
+      ],
+      newContact: {
+        email: null,
+        name: null,
+        subject: null,
+        message: null
+      }
     };
   },
   computed: {

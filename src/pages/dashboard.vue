@@ -1,12 +1,12 @@
 <template>
   <b-container class="mt-4 mb-2">
-    <b-row>
-      <b-col col sm="12" lg="3" class="p-10">
+    <b-row  >
+      <b-col col xs="12" sm="12" md="12" lg="3" class="p-10" >
         <b-list-group>
           <b-input 
             class="mb-2 mr-sm-2 mb-sm-0" 
-            id="inlineFormInputName2" 
-            placeholder="Busca tu burbuja" />
+            id="inlineFormInputName2"
+            placeholder="Buscar en mi panel de control" />
           <br>
           <b-list-group-item 
             active
@@ -25,7 +25,7 @@
         </b-list-group>
       </b-col>
 
-      <b-col col sm="12" lg="5" id="light_list" class="p-10 light-list">
+      <b-col col xs="12" sm="12" md="12" lg="5" id="light_list" class="p-10 light-list">
         <div>
           <h4 class="pull-left px-3"  style="display: inline-block;">
             Mis luces
@@ -35,7 +35,7 @@
         </div>
       </b-col>
 
-      <b-col col sm="12" lg="4" class="p-10 text-center map-container-holder">
+      <b-col col xs="12" sm="12" md="12" lg="4" class="p-10 text-center map-container-holder">
         <h4>En mi ciudad</h4>
         <div class="map-container radius-12">
           <google-map  

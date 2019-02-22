@@ -3,13 +3,11 @@
     <h1 class="text-center">
       Crea tu idea
     </h1>
-    <b-container class="bv-example-row">
-      <b-row align-h="center">
-        <b-col cols="5">
-            <BubbleForm />
-        </b-col>
-      </b-row>
-    </b-container>
+    <b-row>
+      <b-col col offset-lg="4" lg="4">
+          <BubbleForm />
+      </b-col>
+    </b-row>
   </div>
 </template>
 

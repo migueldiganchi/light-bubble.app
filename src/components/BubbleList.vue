@@ -9,7 +9,9 @@
     </b-row>
     <b-row>
       <b-col class="text-center">
-        <span>Ver más causas</span>
+        <router-link :to="'/'">
+          <span>Ver más causas</span>
+        </router-link>
       </b-col>
     </b-row>
   </div>
