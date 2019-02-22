@@ -11,12 +11,9 @@
         <p class="card-text"><small>{{ bubble.description }}</small></p>
       </router-link>
       <div class="card-buttons">
-        <b-button href="#" size="sm" variant="primary">
-          Capturar
-        </b-button>
-        <b-button href="#" size="sm">
-          No me gusta
-        </b-button>
+        <b-button size="sm" variant="success">Votar</b-button>
+        <b-button size="sm" variant="info">Donar</b-button>
+        <b-button size="sm" variant="danger">Denunciar</b-button>
       </div>
     </div>
   </b-card>

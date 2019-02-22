@@ -13,7 +13,6 @@ import signup from '@/pages/auth/signup'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   routes: [
     { path: '/', name: 'home', component: home },
     { path: '/signin', name: 'signin', component: signin },

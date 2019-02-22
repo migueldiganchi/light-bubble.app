@@ -1,7 +1,7 @@
 <template>
   <b-container class="mt-4 mb-2">
     <b-row>
-      <b-col col lg="3" class="p-10">
+      <b-col col sm="12" lg="3" class="p-10">
         <b-list-group>
           <b-input 
             class="mb-2 mr-sm-2 mb-sm-0" 
@@ -25,9 +25,9 @@
         </b-list-group>
       </b-col>
 
-      <b-col col lg="5" id="light_list" class="p-10 light-list">
+      <b-col col sm="12" lg="5" id="light_list" class="p-10 light-list">
         <div>
-          <h4 class="pull-left"  style="display: inline-block;">
+          <h4 class="pull-left px-3"  style="display: inline-block;">
             Mis luces
           </h4>
           <small class="pull-right">Causas creadas por mi</small>
@@ -35,23 +35,13 @@
         </div>
       </b-col>
 
-      <b-col col lg="4" class="p-10 text-center map-container-holder">
+      <b-col col sm="12" lg="4" class="p-10 text-center map-container-holder">
         <h4>En mi ciudad</h4>
         <div class="map-container radius-12">
           <google-map  
             name="dashboard"
+            :markers="markers"
             class="radius-12" />
-        </div>
-        <ul class="text-left rules">
-          <li>Encuentra las mejores causas</li>
-          <li>Vótalas dándole prioridad entre las demás</li>
-          <li>Comparte y da a conocer</li>
-        </ul>
-        <div class="sharing-box mt-3">
-          <button type="button"
-            class="btn btn-success btn-lg btn-block">
-            Compartir
-          </button>
         </div>
       </b-col>
 
@@ -70,7 +60,19 @@ export default {
   },
   data () {
     return {
-      currentPage: 1
+      currentPage: 1,
+      markers: [
+        {
+          id: 1,
+          lat: -27.7834, 
+          lng: -64.2642
+        },
+        {
+          id: 2,
+          lat: -30.7834, 
+          lng: -69.2648
+        }
+      ],
     }
   },
   computed: {

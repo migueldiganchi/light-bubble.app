@@ -29,7 +29,9 @@
         <div class="bubble-map-container mt-3 py-2">
           <google-map  
             name="dashboard"
-            class="radius-12" />
+            class="radius-12"
+            :zoom="6"
+            :markers="mapMarkers" />
         </div>
       </b-col>
     </b-row>
@@ -117,6 +119,13 @@ export default {
   },
   data () {
     return {
+      mapMarkers: [
+        {
+          id: 1,
+          lat: -27.7834,
+          lng: -64.2642
+        }
+      ],
       currentUser: {
         id: 1,
         username: 'migueldiganchi',

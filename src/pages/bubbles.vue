@@ -36,12 +36,10 @@
       </b-col>
 
       <b-col col lg="5" class="p-10 light-list">
-        <div>
-          <h4 class="text-center" style="display: inline-block;">
-            Todas las luces
-          </h4>
-          <BubbleList :bubbles="allBubbles" />
-        </div>
+        <h4 class="text-center px-3" style="display: inline-block;">
+          Todas las luces
+        </h4>
+        <BubbleList :bubbles="allBubbles" />
       </b-col>
 
       <b-col col lg="4" class="p-10 text-center map-container-holder">
@@ -51,13 +49,15 @@
         <div class="map-container radius-12">
           <google-map 
             name="explorer"
-            class="radius-12" />
+            class="radius-12"
+            :markers="markers" />
         </div>
-        <ul class="text-left rules">
-          <li>Enter our system</li>
-          <li>Select the search you want to do</li>
-          <li>Make de search gaining money with it</li>
-        </ul>
+        <div class="sharing-box mt-3">
+          <button type="button"
+            class="btn btn-success btn-lg btn-block">
+            Compartir
+          </button>
+        </div>
       </b-col>
     </b-row>
   </b-container>
@@ -74,7 +74,23 @@ export default {
   },
   data () {
     return {
-      markers: [],
+      markers: [
+        {
+          id: 1,
+          lat: -27.7834, 
+          lng: -64.2642
+        },
+        {
+          id: 2,
+          lat: -30.7834, 
+          lng: -69.2648
+        },
+        {
+          id: 3,
+          lat: -37.7834, 
+          lng: -34.2642
+        }
+      ],
     }
   },
   computed: {
