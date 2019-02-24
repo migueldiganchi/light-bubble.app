@@ -15,7 +15,7 @@
     <b-row>  
       <b-col col offset-lg="2" lg="8">
         <div class="media-container">
-          <app-carousel :items="mediaList" />
+          <app-carousel :items="bubbleMediaList" />
         </div>
         <div class="actions p-1 text-center">
           <b-button variant="success">Votar</b-button>
@@ -36,15 +36,15 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col col offset-lg="2" lg="3">
-        <h5 class="mb-4 mt-3 text-center">
-          Mensaje privado
-        </h5>
-        <div>
-          <contact-form 
-            :fromUserName="currentUser.name"
-            :contact="newContact" />
-        </div>
+      <b-col col cols="12" offset-lg="2" lg="3">
+          <h5 class="mb-4 mt-3 text-center">
+            Mensaje privado
+          </h5>
+          <div class="radius-12 p-3" style="border: solid 1px #c9c9c9; background-color: #f9f9f9;">
+            <contact-form 
+              :fromUserName="currentUser.name"
+              :contact="newContact" />
+          </div>
       </b-col>
       <b-col col lg="5">
         <div class="comments-container">
@@ -62,7 +62,8 @@
               </p>
             </b-card-body>
           </div>
-          <div v-if="showCommentForm" class="pt-3">
+          <div v-if="showCommentForm" class="p-3 radius-12"
+            style="border: solid 1px #c9c9c9; background-color: #f9f9f9;">
             <b-form @submit.prevent="addComment">
               <b-form-group class="mb-3">
                 <b-form-input 
@@ -77,7 +78,7 @@
                   rows="2"
                   max-rows="6" />
               </b-form-group>
-              <b-form-group class="text-right">
+              <b-form-group class="text-right m-0">
                 <b-button 
                   type="button"
                   @click="showCommentForm = !showCommentForm">
@@ -202,6 +203,23 @@ export default {
     relatedBubbles () {
       // return this.$store.getters.bubbles
       return [];
+    },
+    bubbleMediaList () {
+      if (!this.bubble) {
+        return;
+      }
+      let list = [];
+      list.push({
+        id: 9,
+        title: this.bubble.description,
+        media_url: this.bubble.media_url
+      });
+      for (let i = 0; i < this.mediaList.length; i++) {
+        const media = this.mediaList[i];
+        list.push(media);
+      }
+
+      return list;
     }
   },
   methods: {

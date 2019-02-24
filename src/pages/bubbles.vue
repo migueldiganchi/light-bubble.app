@@ -10,10 +10,10 @@
         <b-list-group>
           <b-list-group-item href="#" active class="flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Últimas</h5>
+              <h5 class="mb-1">Últimas causas registradas</h5>
             </div>
             <p class="mb-1 mt-2">
-              <small>Publicadas recientemente</small>
+              <small>Causas publicadas recientemente</small>
             </p>
           </b-list-group-item>
           <b-list-group-item href="#" class="flex-column align-items-start">
@@ -37,14 +37,14 @@
 
       <b-col col lg="5" class="p-10 light-list">
         <h4 class="text-center px-3" style="display: inline-block;">
-          Todas las luces
+          Todas las causas
         </h4>
         <BubbleList :bubbles="allBubbles" />
       </b-col>
 
       <b-col col lg="4" class="p-10 text-center map-container-holder">
         <h4>
-          Luces en tu ciudad
+          Causas en tu ciudad
         </h4>
         <div class="map-container radius-12">
           <google-map 

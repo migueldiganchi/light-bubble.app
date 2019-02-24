@@ -28,16 +28,12 @@
         :max-rows="6"></b-form-textarea>
     </b-form-group>
 
-    <b-form-group class="text-center">
-      <b-button 
-        @click="goBack"
-        variant="danger">
-        Cancel
-        </b-button>
+    <b-form-group class="text-center m-0">
       <b-button 
         type="submit" 
-        variant="primary">
-        Create
+        variant="primary"
+        :disabled="!hasText()">
+        Enviar
       </b-button>
     </b-form-group>
 
@@ -59,6 +55,10 @@ export default {
   methods: {
     onSubmit() {
       console.log('submitting...');
+    },
+    hasText () {
+      console.log(this.contact.message);
+      return this.contact.message != "";
     }
   }
 };

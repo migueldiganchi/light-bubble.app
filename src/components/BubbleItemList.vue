@@ -8,7 +8,7 @@
     <div class="card-body">
       <router-link :to="'/bubble/' + bubble.id" class="bubble-item">
         <h5 class="card-title">{{ bubble.title }}</h5>
-        <p class="card-text"><small>{{ bubble.description }}</small></p>
+        <p class="card-text"><small v-text="maxLength(bubble.description)"></small></p>
       </router-link>
       <div class="card-buttons">
         <b-button size="sm" variant="success">Votar</b-button>
@@ -25,6 +25,23 @@ export default {
     bubble: {
       type: Object,
       required: true
+    }
+  },
+  data () {
+    return {
+      max: 36
+    }
+  },
+  methods: {
+    maxLength(text) {
+      let result = '';
+      if (text.length > this.max) {
+        result = text.substring(0, this.max) + '...';
+      } else {
+        result = text;
+      }
+
+      return result;
     }
   }
 }

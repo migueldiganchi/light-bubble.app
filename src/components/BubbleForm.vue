@@ -37,12 +37,12 @@
         <b-button 
           @click="goBack"
           variant="danger">
-          Cancel
+          Cancelar
           </b-button>
         <b-button 
           type="submit" 
           variant="primary">
-          Create
+          Crear
         </b-button>
       </div>
     </b-form>

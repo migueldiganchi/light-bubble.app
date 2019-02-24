@@ -31,7 +31,8 @@
 
     <b-container class="last-bubbles">
       <b-row>
-        <b-col cols="6"
+        <b-col cols="12"
+          col lg="6"
           v-for="bubble in lastBubbles"
           :key="bubble.id">
           <BubbleItemList :bubble="bubble" />

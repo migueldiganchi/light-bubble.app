@@ -10,7 +10,7 @@
           Explora
         </b-nav-item>
         <b-nav-item to="/new">
-          Publica tu idea
+          Publica tu causa
         </b-nav-item>
       </b-navbar-nav>
 
