@@ -5,8 +5,7 @@
     footer-tag="footer"
     class="card gradient-top p-0">
     <img :src="bubble.media_url">
-    <div 
-      class="card-body p-0">
+    <div class="card-body-holder p-0">
       <router-link :to="'/bubble/' + bubble.id" 
         class="bubble-item bg-tr-gradient-down p-3">
         <h5 class="card-title text-shadow-dark">{{ bubble.title }}</h5>
@@ -81,14 +80,19 @@ export default {
 }
 
 .card-body {
+  padding: 0 !important;
+}
+
+.card-body-holder {
   position: relative;
   z-index: 999;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100%;
   z-index: 100;
-  padding: 0px;
+  padding: 0 !important;
 }
 
 .card .bubble-item {
@@ -99,20 +103,20 @@ export default {
   position: relative;
 }
 
-.card-body * {
+.card-body-holder * {
   color: #f9f9f9;
   text-shadow: 1px 1px #666;
   text-decoration: none !important;
 }
 
-.card .card-body {
+.card .card-body-holder {
   min-height: 150px !important;
 }
 
-.card .card-body .card-buttons {
+.card .card-body-holder .card-buttons {
   text-align: right;
   position: absolute;
-  bottom: -9px;
+  bottom: 15px;
   right: 15px;
   left: 15px;
 }

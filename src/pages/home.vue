@@ -5,9 +5,8 @@
         id="presentation"
         fluid
         header="Marketing caritativo"
-        lead="Canjea una donación a una una causa de bien común y 
-          te damos por tiempo de publicidad">
-        <div class="text-holder">
+        lead="Canjea una donación a una causa por tiempo de publicidad">
+        <div class="buttons-holder pt-3 pb-2">
           <b-btn to="/signup"
             variant="primary">
             Registrar mi cuenta
@@ -25,7 +24,9 @@
           <b-modal 
             id="tutorial" 
             title="¿Cómo funciona?"
-            class="text-left" ok-only>
+            class="text-left" 
+            ok-title="Entendido"
+            ok-only>
             <p class="p one">
               Selecciona una de las causas registradas en nuestra plataforma
             </p>
@@ -42,24 +43,28 @@
       </b-jumbotron>
     </div>
 
-    <b-container class="carousel-container">
-      <b-row>
-        <b-col col lg="12">
-          <h4 class="mb-4">
-            Publica ideas para mejorar el mundo
-          </h4>
-          <Carousel name="home" class="carousel" />
-        </b-col>
-      </b-row>
-    </b-container>
-
     <b-container class="last-bubbles">
       <b-row>
+        <b-col cols="12 text-center">
+          <h5 class="mb-3">
+            Causas de bien común que necesitan de tú ayuda
+          </h5>
+          <p>
+            Te damos publicidad a cambio de una buena causa.
+          </p>
+        </b-col>
         <b-col cols="12"
           col lg="6"
           v-for="bubble in lastBubbles"
           :key="bubble.id">
           <BubbleItemList :bubble="bubble" />
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col class="text-center pt-1 pb-3">
+          <router-link :to="'/'">
+            <span>Ver más causas</span>
+          </router-link>
         </b-col>
       </b-row>
     </b-container>
