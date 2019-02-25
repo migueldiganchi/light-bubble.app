@@ -4,16 +4,40 @@
       <b-jumbotron
         id="presentation"
         fluid
-        header="Mercado de ideas"
-        lead="Compra y vende los productos de tu imaginación">
+        header="Marketing caritativo"
+        lead="Canjea una donación a una una causa de bien común y 
+          te damos por tiempo de publicidad">
         <div class="text-holder">
           <b-btn to="/signup"
-            variant="primary" href="#">
+            variant="primary">
             Registrar mi cuenta
           </b-btn>
-          <b-btn to="/signin">
+          <b-btn to="/signin"
+            variant="success">
             Ingresar
           </b-btn>
+          <b-btn 
+            v-b-modal.tutorial
+            variant="warning">
+            ¿Como funciona?
+          </b-btn>
+
+          <b-modal 
+            id="tutorial" 
+            title="¿Cómo funciona?"
+            class="text-left" ok-only>
+            <p class="p one">
+              Selecciona una de las causas registradas en nuestra plataforma
+            </p>
+            <p class="p two">
+              Realiza una donación a la causa seleccionada eligiendo 
+              la duración en meses
+            </p>
+            <p class="p three">
+              Crea tu publicación y envíala a difundir durante el tiempo 
+              que corresponda dependiendo del tipo donación.
+            </p>
+          </b-modal>
         </div>
       </b-jumbotron>
     </div>
@@ -63,7 +87,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .carousel-container {
     margin-bottom: 30px;
   }
@@ -72,5 +96,62 @@ export default {
   }
   .btn {
     margin: auto 5px;
+  }
+
+
+  .modal-body * {
+    color: #333 !important;
+    text-shadow: 1px 1px 1px #999 !important;
+  }
+
+
+  .modal-body .number {
+    display: inline-block;
+    min-height: 100%;
+    text-shadow: 1px 1px 1px #999 !important;
+  }
+
+  .modal-body p {
+    padding: 0;
+    padding-left: 18px;
+    margin-right: 33px !important;
+    position: relative !important;
+    left: 33px;
+    margin-bottom: 27px !important;
+  }
+
+  .modal-body p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .modal-body p::before {
+    display: inline-block;
+    background-color: #c9c9c9;
+    color: #111;
+    content: "";
+    left: -30px;
+    width: 36px;
+    height: 36px;
+    line-height: 33px;
+    position: absolute;
+    top: 3px;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 12px;
+    border: solid 1px #999;
+  }
+
+  .modal-body p.one::before {
+    content: '1';
+  }
+
+  .modal-body p.two::before {
+    content: '2';
+  }
+
+  .modal-body p.three::before {
+    content: '3';
   }
 </style>

@@ -3,17 +3,32 @@
     img-alt="Card image"
     img-top
     footer-tag="footer"
-    class="card gradient-top">
+    class="card gradient-top p-0">
     <img :src="bubble.media_url">
-    <div class="card-body">
-      <router-link :to="'/bubble/' + bubble.id" class="bubble-item">
-        <h5 class="card-title">{{ bubble.title }}</h5>
-        <p class="card-text"><small v-text="maxLength(bubble.description)"></small></p>
+    <div 
+      class="card-body p-0">
+      <router-link :to="'/bubble/' + bubble.id" 
+        class="bubble-item bg-tr-gradient-down p-3">
+        <h5 class="card-title text-shadow-dark">{{ bubble.title }}</h5>
+        <p class="card-text">
+          <small class="text-shadow-dark" v-text="maxLength(bubble.description)"></small></p>
       </router-link>
       <div class="card-buttons">
-        <b-button size="sm" variant="success">Votar</b-button>
-        <b-button size="sm" variant="info">Donar</b-button>
-        <b-button size="sm" variant="danger">Denunciar</b-button>
+        <b-button size="sm" 
+          variant="success" 
+          class="box-shadow">
+            Votar
+        </b-button>
+        <b-button size="sm" 
+          variant="info" 
+          class="box-shadow">
+            Donar
+        </b-button>
+        <b-button size="sm" 
+          variant="danger" 
+          class="box-shadow">
+            Denunciar
+        </b-button>
       </div>
     </div>
   </b-card>
@@ -54,7 +69,7 @@ export default {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  border: solid 1px #666;
+  padding: 0 !important;
 }
 
 .card img {
@@ -73,7 +88,15 @@ export default {
   right: 0;
   bottom: 0;
   z-index: 100;
-  padding: 10px;
+  padding: 0px;
+}
+
+.card .bubble-item {
+  display: block;
+  color: #333;
+  margin-bottom: 25px;
+  padding: 9px;
+  position: relative;
 }
 
 .card-body * {
@@ -82,14 +105,16 @@ export default {
   text-decoration: none !important;
 }
 
-.card .bubble-item {
-  display: block;
-  color: #333;
-  margin-bottom: 25px;
+.card .card-body {
+  min-height: 150px !important;
 }
 
-.card .card-buttons {
+.card .card-body .card-buttons {
   text-align: right;
+  position: absolute;
+  bottom: -9px;
+  right: 15px;
+  left: 15px;
 }
 
 </style>

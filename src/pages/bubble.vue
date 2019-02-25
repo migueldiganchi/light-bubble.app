@@ -18,9 +18,9 @@
           <app-carousel :items="bubbleMediaList" />
         </div>
         <div class="actions p-1 text-center">
-          <b-button variant="success">Votar</b-button>
-          <b-button variant="info">Donar</b-button>
-          <b-button variant="danger">Denunciar</b-button>
+          <b-button variant="success" class="box-shadow">Votar</b-button>
+          <b-button variant="info" class="box-shadow">Donar</b-button>
+          <b-button variant="danger" class="box-shadow">Denunciar</b-button>
         </div>
       </b-col>
     </b-row>
