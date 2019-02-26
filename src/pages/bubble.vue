@@ -42,7 +42,10 @@
           </h5>
           <div class="radius-12 p-3" style="border: solid 1px #c9c9c9; background-color: #f9f9f9;">
             <contact-form 
+              @submit="sendPrivateMessage"
+              :disabled="sendingContactForm"
               :fromUserName="currentUser.name"
+              :ajaxMessage="sendingContactForm ? 'Enviando mensaje...' : null"
               :contact="newContact" />
           </div>
       </b-col>
@@ -148,6 +151,7 @@ export default {
         phones: [],
         causes: []
       },
+      sendingContactForm: false,
       showCommentForm: false,
       newComment: {
         id: null,
@@ -236,6 +240,24 @@ export default {
         username: this.currentUser.name,
         comment: null
       }
+    },
+    sendPrivateMessage () {
+      let _context = this;
+      this.sendingContactForm = true;
+      setTimeout(function() {
+        _context.sendingContactForm = false;
+        _context.$eventHub.$emit('notify', {
+          message: 'El mensaje se ha enviado exitosamente'
+        });
+
+        // reset new contact
+        _context.newContact = {
+          email: null,
+          name: null,
+          subject: null,
+          message: null
+        };
+      }, 3000);
     }
   },
   created () {

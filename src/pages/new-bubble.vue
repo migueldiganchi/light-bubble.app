@@ -1,7 +1,7 @@
 <template>
   <div class="new-bubble">
     <h1 class="text-center">
-      Crea tu idea
+      Ingresa una causa
     </h1>
     <b-row>
       <b-col col offset-lg="4" lg="4">

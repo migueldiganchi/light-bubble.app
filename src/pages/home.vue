@@ -5,41 +5,56 @@
         id="presentation"
         fluid
         header="Marketing caritativo"
-        lead="Canjea una donación a una causa por tiempo de publicidad">
+        lead="Realiza una donación a una causas a cambio de tiempo de publicidad">
         <div class="buttons-holder pt-3 pb-2">
           <b-btn to="/signup"
             variant="primary">
-            Registrar mi cuenta
+            Registrar una cuenta
           </b-btn>
           <b-btn to="/signin"
             variant="success">
-            Ingresar
+            Iniciar sesión
           </b-btn>
           <b-btn 
             v-b-modal.tutorial
             variant="warning">
             ¿Como funciona?
           </b-btn>
-
-          <b-modal 
-            id="tutorial" 
-            title="¿Cómo funciona?"
-            class="text-left" 
-            ok-title="Entendido"
-            ok-only>
-            <p class="p one">
-              Selecciona una de las causas registradas en nuestra plataforma
-            </p>
-            <p class="p two">
-              Realiza una donación a la causa seleccionada eligiendo 
-              la duración en meses
-            </p>
-            <p class="p three">
-              Crea tu publicación y envíala a difundir durante el tiempo 
-              que corresponda dependiendo del tipo donación.
-            </p>
-          </b-modal>
         </div>
+        <b-modal 
+          id="tutorial" 
+          title="¿Cómo funciona?"
+          class="text-left">
+          <p class="one">
+            Selecciona una de las causas registradas en nuestra plataforma
+          </p>
+          <p class="two">
+            Realiza una donación a la causa seleccionada para  
+            configurar la duración de tu nueva publicidad
+          </p>
+          <p class="three">
+            Publica y disfruta de tu marca formando parte de algo grande
+          </p>
+          <div slot="modal-footer" class="w-100 p-1">
+            <b-row
+              class="row flow">
+              <b-col col xs="12" lg="6">
+                <b-btn to="/signup"
+                  variant="primary"
+                  class="btn-block">
+                  Registrar mi cuenta
+                </b-btn>
+              </b-col>
+              <b-col col xs="12" lg="6">
+                <b-btn to="/signin"
+                  variant="success"
+                  class="btn-block text-shadow">
+                  Iniciar sesión
+                </b-btn>
+              </b-col>
+            </b-row>
+          </div>
+        </b-modal>
       </b-jumbotron>
     </div>
 
@@ -47,11 +62,8 @@
       <b-row>
         <b-col cols="12 text-center">
           <h5 class="mb-3">
-            Causas de bien común que necesitan de tú ayuda
+            Últimas causas registradas
           </h5>
-          <p>
-            Te damos publicidad a cambio de una buena causa.
-          </p>
         </b-col>
         <b-col cols="12"
           col lg="6"
@@ -104,11 +116,11 @@ export default {
   }
 
 
-  .modal-body * {
+  .modal-body p, 
+  .modal-body {
     color: #333 !important;
     text-shadow: 1px 1px 1px #999 !important;
   }
-
 
   .modal-body .number {
     display: inline-block;
@@ -159,4 +171,28 @@ export default {
   .modal-body p.three::before {
     content: '3';
   }
+
+  @media screen and (max-width: 416px) {
+    .modal-footer .row .col:first-child {
+      margin-bottom: 15px;
+    }
+
+  }
+
+  @media screen and (max-width: 564px) {
+    #presentation .buttons-holder {
+      padding: 21px 0 0 0 !important;
+    }
+    #presentation .buttons-holder .btn { 
+      display: block !important;
+      width: initial;
+      width: 100%;
+      margin: 0 0 15px;
+    }
+
+    #presentation .buttons-holder .btn:last-child { 
+      margin-bottom: 0 !important;
+    }
+  }
+
 </style>

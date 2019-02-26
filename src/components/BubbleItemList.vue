@@ -3,7 +3,7 @@
     img-alt="Card image"
     img-top
     footer-tag="footer"
-    class="card gradient-top p-0">
+    class="list-item card gradient-top p-0">
     <img :src="bubble.media_url">
     <div class="card-body-holder p-0">
       <router-link :to="'/bubble/' + bubble.id" 
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style>
-.card {
+.list-item.card {
   margin: 10px 0 !important;
   color: #333;
   position: relative;
@@ -71,7 +71,7 @@ export default {
   padding: 0 !important;
 }
 
-.card img {
+.list-item.card img {
   position: absolute;
   width: 100%;
   top: 0;
@@ -79,11 +79,11 @@ export default {
   right: 0;
 }
 
-.card-body {
+.list-item.card .card-body {
   padding: 0 !important;
 }
 
-.card-body-holder {
+.list-item.card .card-body-holder {
   position: relative;
   z-index: 999;
   top: 0;
@@ -95,7 +95,7 @@ export default {
   padding: 0 !important;
 }
 
-.card .bubble-item {
+.list-item.card .bubble-item {
   display: block;
   color: #333;
   margin-bottom: 25px;
@@ -103,7 +103,7 @@ export default {
   position: relative;
 }
 
-.card-body-holder * {
+.list-item.card .card-body-holder * {
   color: #f9f9f9;
   text-shadow: 1px 1px #666;
   text-decoration: none !important;
@@ -113,12 +113,11 @@ export default {
   min-height: 150px !important;
 }
 
-.card .card-body-holder .card-buttons {
+.list-item.card .card-body-holder .card-buttons {
   text-align: right;
   position: absolute;
   bottom: 15px;
   right: 15px;
   left: 15px;
 }
-
 </style>

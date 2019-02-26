@@ -193,3 +193,9 @@ h1 {
     -moz-border-radius: 50%;
     border-radius: 50%;
   }
+
+  .text-dark {color: #222 !important;}
+  .text-dark * {color: #222 !important;}
+
+  .text-light {color: #f9f9f9 !important;}
+  .text-light * {color: #f9f9f9 !important;}

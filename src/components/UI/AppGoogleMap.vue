@@ -33,7 +33,6 @@ export default {
       let markerObject = null;
       let marker = null;
       this.markers.forEach(marker => {
-        console.log('marker', marker);
         markerObject = new google.maps.Marker({
           position: {lat: marker.lat, lng: marker.lng}
         });

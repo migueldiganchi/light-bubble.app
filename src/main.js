@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '@/assets/css/app.css'
 
+Vue.prototype.$eventHub = new Vue(); // global event bus
+
 Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)

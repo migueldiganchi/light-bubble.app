@@ -5,14 +5,14 @@
           type="text"
           v-model="bubble.title"
           required
-          placeholder="Idea title">
+          placeholder="Nombre de la ONG">
         </b-form-input>
       </b-form-group>
 
       <b-form-group>
         <b-form-textarea id="textarea1"
           v-model="bubble.description"
-          placeholder="Buble description"
+          placeholder="Descripción de las actividades principales de la entidad registrada"
           :rows="3"
           :max-rows="6"></b-form-textarea>
       </b-form-group>
@@ -21,7 +21,7 @@
         <b-form-input
           type="text"
           v-model="bubble.media_url"
-          placeholder="Image url"
+          placeholder="URL de una imagen representativa"
           required></b-form-input>
       </b-form-group>
 
