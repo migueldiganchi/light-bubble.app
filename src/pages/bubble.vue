@@ -45,7 +45,7 @@
               @submit="sendPrivateMessage"
               :disabled="sendingContactForm"
               :fromUserName="currentUser.name"
-              :ajaxMessage="sendingContactForm ? 'Enviando mensaje...' : null"
+              :ajaxMessage="sendingContactForm ? 'Enviando...' : null"
               :contact="newContact" />
           </div>
       </b-col>
@@ -70,7 +70,7 @@
             <comment-form 
               :comment="newComment"
               :disabled="sendingCommentForm"
-              :ajaxMessage="sendingCommentForm ? 'Enviando comentario...' : null"
+              :ajaxMessage="sendingCommentForm ? 'Enviando...' : null"
               @onSubmit="sendComment"
               @onCancelForm="cancelComment" />
           </div>

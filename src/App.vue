@@ -59,4 +59,10 @@ export default {
     bottom: 0px;
     left: 15px;
   }
+
+  @media screen and (max-width: 450px) {
+    div.alert {
+      right: 15px;
+    }
+  }
 </style>
