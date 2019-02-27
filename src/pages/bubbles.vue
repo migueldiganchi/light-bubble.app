@@ -35,14 +35,14 @@
         </b-list-group>
       </b-col>
 
-      <b-col col lg="5" class="p-10 light-list">
+      <b-col col lg="5" class="light-list">
         <h4 class="text-center px-3" style="display: inline-block;">
           Todas las causas
         </h4>
         <BubbleList :bubbles="allBubbles" />
       </b-col>
 
-      <b-col col lg="4" class="p-10 text-center map-container-holder">
+      <b-col col lg="4" class="text-center map-container-holder">
         <h4>
           Causas en tu ciudad
         </h4>
@@ -105,13 +105,10 @@ export default {
 </script>
 
 <style scoped>
-  .section-title {
-    margin-top: 9px;
-    margin-bottom: 21px;
+  .light-list {
+    padding: 0 !important;
   }
-  .rules {
-    margin-top: 21px;
-  }
+
   @media screen and (max-width: 450px) {
    .light-list,
    .map-container-holder {

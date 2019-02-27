@@ -217,7 +217,7 @@ export default {
         // ajax: off
         _context.sendingCommentForm = false;
         // set comment
-        this.newComment.id = 99;
+        this.newComment.id = Math.floor(Math.random() * 1001);
         this.comments.push(this.newComment);
         this.showCommentForm = false;
         this.startComment();

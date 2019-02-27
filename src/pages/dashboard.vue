@@ -1,6 +1,6 @@
 <template>
   <b-container class="mt-4 mb-2">
-    <b-row  >
+    <b-row>
       <b-col col xs="12" sm="12" md="12" lg="3" class="p-10" >
         <b-list-group>
           <b-input 
@@ -90,6 +90,10 @@ export default {
 </script>
 
 <style>
+  .light-list {
+    padding: 0 !important;
+  }
+
   @media screen and (max-width: 450px) {
     .light-list,
     .map-container-holder {
