@@ -5,35 +5,36 @@
     </h1>
     <b-container>
       <b-row align-h="center">
-        <b-col cols="5">
+        <b-col col offset-lg="4" lg="4">
           <b-form @submit.prevent="onSubmit">
             <b-form-group id="EmailGroup"
-                          label="Email address:"
-                          label-for="emailInput"
-                          description="We'll never share your email with anyone else.">
+                          label="Correo electrónico:"
+                          label-for="emailInput">
               <b-form-input id="emailInput"
                             type="email"
                             v-model="email"
                             required
-                            placeholder="Enter your email">
+                            placeholder="Ingresa tu correo electrónico">
               </b-form-input>
             </b-form-group>
 
             <b-form-group id="PasswordGroup"
-                          label="Your password:"
+                          label="Contraseña:"
                           label-for="passwordInput">
               <b-form-input id="passwordInput"
                             type="password"
                             v-model="password"
                             required
-                            placeholder="Enter your password">
+                            placeholder="Ingresa tu contraseña">
               </b-form-input>
             </b-form-group>
             <br>
             <div class="text-center">
               <b-button type="submit" 
                 variant="primary"
-                class="pull-right">Enter</b-button>
+                class="pull-right">
+                  Entrar
+              </b-button>
             </div>
           </b-form>
           <br>

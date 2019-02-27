@@ -5,7 +5,7 @@
         id="presentation"
         fluid
         header="Marketing caritativo"
-        lead="Realiza una donación a una causas a cambio de tiempo de publicidad">
+        lead="Realiza una donación a cambio de tiempo de publicidad">
         <div class="buttons-holder pt-3 pb-2">
           <b-btn to="/signup"
             variant="primary">

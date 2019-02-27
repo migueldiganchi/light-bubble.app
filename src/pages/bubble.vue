@@ -18,7 +18,7 @@
           <app-carousel :items="bubbleMediaList" />
         </div>
         <div class="actions p-1 text-center">
-          <b-button variant="success" class="box-shadow">Votar</b-button>
+          <b-button btn-blue variant="success" class="box-shadow">Votar</b-button>
           <b-button variant="info" class="box-shadow">Donar</b-button>
           <b-button variant="danger" class="box-shadow">Denunciar</b-button>
         </div>
@@ -67,40 +67,19 @@
           </div>
           <div v-if="showCommentForm" class="p-3 radius-12"
             style="border: solid 1px #c9c9c9; background-color: #f9f9f9;">
-            <b-form @submit.prevent="addComment">
-              <b-form-group class="mb-3">
-                <b-form-input 
-                  v-model="newComment.username" 
-                  type="text" 
-                  placeholder="Ingresa tu nombre" />
-              </b-form-group>
-              <b-form-group>
-                <b-form-textarea
-                  v-model="newComment.comment"
-                  placeholder="Por favor ingresa un comentario"
-                  rows="2"
-                  max-rows="6" />
-              </b-form-group>
-              <b-form-group class="text-right m-0">
-                <b-button 
-                  type="button"
-                  @click="showCommentForm = !showCommentForm">
-                  Cancelar
-                </b-button>
-                <b-button 
-                  type="submit"
-                  variant="primary">
-                  Agregar comentario
-                </b-button>
-              </b-form-group>
-            </b-form>
+            <comment-form 
+              :comment="newComment"
+              :disabled="sendingCommentForm"
+              :ajaxMessage="sendingCommentForm ? 'Enviando comentario...' : null"
+              @onSubmit="sendComment"
+              @onCancelForm="cancelComment" />
           </div>
           <div class="text-center">
             <b-button 
               v-if="!showCommentForm"
               @click="showCommentForm = !showCommentForm"
-              variant="outline-primary">
-              Comentar
+              variant="primary">
+              Agregar comentario
             </b-button>
           </div>
         </div>
@@ -124,6 +103,7 @@
 import AppCarousel from '@/components/UI/AppCarousel';
 import AppGoogleMap from '@/components/UI/AppGoogleMap';
 import AppContactForm from '@/components/UI/AppContactForm';
+import AppCommentForm from '@/components/UI/AppCommentForm';
 import BubbleList from '@/components/BubbleList';
 
 export default {
@@ -131,6 +111,7 @@ export default {
     'app-carousel': AppCarousel,
     'google-map': AppGoogleMap,
     'contact-form': AppContactForm,
+    'comment-form': AppCommentForm,
     BubbleList
   },
   data () {
@@ -152,6 +133,7 @@ export default {
         causes: []
       },
       sendingContactForm: false,
+      sendingCommentForm: false,
       showCommentForm: false,
       newComment: {
         id: null,
@@ -227,12 +209,28 @@ export default {
     }
   },
   methods: {
-    addComment() {
-      this.newComment.id = 99;
-      this.comments.push(this.newComment);
-      this.showCommentForm = false;
-      this.startComment();
+    sendComment() {
+      let _context = this;
+      // ajax: on
+      this.sendingCommentForm = true;
+      setTimeout(() => {
+        // ajax: off
+        _context.sendingCommentForm = false;
+        // set comment
+        this.newComment.id = 99;
+        this.comments.push(this.newComment);
+        this.showCommentForm = false;
+        this.startComment();
+        // notify user
+        _context.$eventHub.$emit('notify', {
+          message: 'El comentario se ha enviado exitosamente'
+        });
+      }, 3000);
+
       return false;
+    },
+    cancelComment () {
+      this.showCommentForm = false;
     },
     startComment() {
       this.newComment = {

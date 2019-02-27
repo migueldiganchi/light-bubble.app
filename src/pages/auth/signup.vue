@@ -5,50 +5,49 @@
     </h1>
     <b-container class="bv-example-row">
       <b-row align-h="center">
-        <b-col cols="5">
+        <b-col col offset-lg="4" lg="4">
           <b-form @submit.prevent="onSubmit" @reset="onReset">
             <b-form-group id="NameGroup"
-                          label="Name:"
-                          label-for="nameInput"
-                          description="We'll never share your email with anyone else.">
+                          label="Nombre:"
+                          label-for="nameInput">
               <b-form-input id="nameInput"
                             v-model="name"
                             required
-                            placeholder="Enter your name">
+                            placeholder="Ingresa tu nombre completo">
               </b-form-input>
             </b-form-group>
 
             <b-form-group id="EmailGroup"
-                          label="Email address:"
+                          label="Correo electrónico:"
                           label-for="emailInput"
-                          description="We'll never share your email with anyone else.">
+                          description="Es a donde recibirás las notificaciones de nuestro sistema.">
               <b-form-input id="emailInput"
                             type="email"
                             v-model="email"
                             required
-                            placeholder="Enter your email">
+                            placeholder="Ingresa tu correo electrónico personal">
               </b-form-input>
             </b-form-group>
 
             <b-form-group id="PasswordGroup"
-                          label="Your password:"
+                          label="Contraseña:"
                           label-for="passwordInput">
               <b-form-input id="passwordInput"
                             type="password"
                             v-model="password"
                             required
-                            placeholder="Enter your password">
+                            placeholder="Ingresa una contraseña">
               </b-form-input>
             </b-form-group>
 
             <b-form-group id="PasswordConfirmationGroup"
-                          label="Confirm your password:"
+                          label="Confirma tu contraseña:"
                           label-for="passwordConfirmationInput">
               <b-form-input id="passwordConfirmationInput"
                             type="password"
                             v-model="passwordConfirmation"
                             required
-                            placeholder="Confirm your password">
+                            placeholder="Repite la contraseña">
               </b-form-input>
             </b-form-group>
 
@@ -60,13 +59,13 @@
             </b-form-group>
             <br>
             <div class="text-center">
-              <b-button type="submit" variant="primary">Create account</b-button>
-              <b-button type="reset" variant="danger">Reset</b-button>
+              <b-button type="submit" variant="primary">Crear cuenta</b-button>
+              <b-button type="reset" variant="danger">Reiniciar</b-button>
             </div>
           </b-form>
           <br>
           <br>
-          <div class="text-center">
+          <div class="text-center pb-3">
             <label>¿Ya tienes una cuenta?</label>
             <br>
             <router-link to="/signin">Ingresa</router-link>

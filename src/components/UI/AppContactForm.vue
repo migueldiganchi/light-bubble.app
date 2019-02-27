@@ -27,6 +27,7 @@
         v-model="contact.message"
         placeholder="Tu mensaje o consulta"
         :disabled="disabled"
+        required
         :rows="3"
         :max-rows="6"></b-form-textarea>
     </b-form-group>
@@ -36,7 +37,7 @@
         type="submit" 
         variant="primary"
         :disabled="!hasText() || disabled">
-        {{ ajaxMessage || 'Enviar' }}
+        {{ ajaxMessage || 'Enviar mensaje' }}
       </b-button>
     </b-form-group>
 
