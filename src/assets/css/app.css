@@ -83,6 +83,10 @@ h1 {
   text-shadow: 1px 2px 3px red !important;
 }
 
+.text-shadow {
+  text-shadow: 1px 0.4px 1px #333;
+}
+
 #presentation h1::before {
   content: '';
   display: block;
@@ -179,6 +183,7 @@ h1 {
   }
 
   .btn {
+    margin: auto 3px;
     -moz-box-shadow:    1px 1px 3px 1px #333 !important;
     -webkit-box-shadow: 1px 1px 3px 1px #333 !important;
             box-shadow: 1px 1px 3px 1px #333 !important;

@@ -18,9 +18,18 @@
           <app-carousel :items="bubbleMediaList" />
         </div>
         <div class="actions p-1 text-center">
-          <b-button btn-blue variant="success" class="box-shadow">Votar</b-button>
-          <b-button variant="info" class="box-shadow">Donar</b-button>
-          <b-button variant="danger" class="box-shadow">Denunciar</b-button>
+          <b-button 
+            variant="success" 
+            class="box-shadow"
+            @click="click">Votar</b-button>
+          <b-button 
+            variant="info" 
+            class="box-shadow"
+            @click="click">Donar</b-button>
+          <b-button 
+            variant="danger" 
+            class="box-shadow"
+            @click="click">Denunciar</b-button>
         </div>
       </b-col>
     </b-row>
@@ -125,10 +134,10 @@ export default {
       ],
       currentUser: {
         id: 1,
-        username: 'migueldiganchi',
-        name: 'Miguel Diganchi',
+        username: 'usuario1',
+        name: 'Usuario 1',
         addresses: [],
-        email: 'migueldiganchi@gmail.com',
+        email: 'usuario1@email.com',
         phones: [],
         causes: []
       },
@@ -160,18 +169,18 @@ export default {
       comments: [
         {
           id: 1,
-          username: 'Miguel Diganchi',
-          comment: 'Some text with some description'
+          username: 'Usuario 1',
+          comment: 'Comment description here'
         },
         {
           id: 2,
-          username: 'Diego Diganchi',
-          comment: 'Some text with some description of Diego Diganchi'
+          username: 'Usuario 2',
+          comment: 'Some other comment description here'
         },
         {
           id: 3,
-          username: 'Muya Diganchi',
-          comment: 'Some text with some description of muya diganchi'
+          username: 'Usuario 3',
+          comment: 'And some other comment description here'
         }
       ],
       newContact: {
@@ -256,6 +265,12 @@ export default {
           message: null
         };
       }, 3000);
+    },
+    click () {
+      this.$eventHub.$emit('notify', {
+        message: '@todo',
+        type: 'warning'
+      });
     }
   },
   created () {

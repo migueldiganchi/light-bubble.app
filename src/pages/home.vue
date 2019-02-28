@@ -5,7 +5,7 @@
         id="presentation"
         fluid
         header="Marketing caritativo"
-        lead="Realiza una donación a cambio de tiempo de publicidad">
+        lead="Realiza una donación a cambio de publicidad y ayuda a personas que lo necesitan">
         <div class="buttons-holder pt-3 pb-2">
           <b-btn to="/signup"
             variant="primary">
@@ -74,7 +74,7 @@
       </b-row>
       <b-row>
         <b-col class="text-center pt-1 pb-3">
-          <router-link :to="'/'">
+          <router-link :to="'/bubbles'">
             <span>Ver más causas</span>
           </router-link>
         </b-col>
@@ -111,10 +111,6 @@ export default {
   #home .card {
     height: 180px;
   }
-  .btn {
-    margin: auto 5px;
-  }
-
 
   .modal-body p, 
   .modal-body {

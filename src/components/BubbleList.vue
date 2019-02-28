@@ -8,7 +8,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col class="text-center">
+      <b-col class="text-center mb-2">
         <router-link :to="'/'">
           <span>Ver más causas</span>
         </router-link>

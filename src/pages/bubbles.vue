@@ -54,9 +54,14 @@
         </div>
         <div class="sharing-box mt-3">
           <button type="button"
+            @click="share"
             class="btn btn-success btn-lg btn-block">
-            Compartir
+            Compartir estas causas
           </button>
+          <p class="pt-3 text-shadow">
+            Difunde estas causas en tus redes sociales para 
+            que la gente se entere y pueda ayudar.
+          </p>
         </div>
       </b-col>
     </b-row>
@@ -100,6 +105,14 @@ export default {
   },
   created () {
     this.$store.dispatch('loadBubbles')
+  },
+  methods: {
+    share () {
+      this.$eventHub.$emit('notify', {
+        message: '@todo',
+        type: 'warning'
+      });
+    }
   }
 };
 </script>

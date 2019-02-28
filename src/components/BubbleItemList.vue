@@ -116,8 +116,11 @@ export default {
 .list-item.card .card-body-holder .card-buttons {
   text-align: right;
   position: absolute;
-  bottom: 15px;
-  right: 15px;
-  left: 15px;
+  bottom: 12px;
+  right: 12px;
+}
+
+.list-item.card .card-body-holder .card-buttons .btn {
+  margin: 0 1px;
 }
 </style>

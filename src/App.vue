@@ -4,7 +4,7 @@
     <router-view/>
     <b-alert 
       :show="notification.message != null"
-      variant="primary" 
+      :variant="notification.type" 
       class="box-shadow">{{ notification.message }}</b-alert>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
     return {
       notification: {
         id: null,
-        type: null,
+        type: '',
         message: null,
         timeout: 3000
       },
@@ -31,14 +31,14 @@ export default {
     this.$eventHub.$on('notify', this.handleNotification);
   },
   beforeDestroy () {
-    alert('destroying?');
+    console.info('destroying App.vue');
     this.$eventHub.$off('notify');
   },
   methods: {
     handleNotification (notification) {
-      console.log('message', notification.message);
       let _context = this;
-      this.notification.message = notification.message;
+      this.notification = notification;
+      this.notification.timeout = notification.timeout ? notification.timeout : 3000;
       setTimeout(() => {
         // clear notification
         _context.notification = {

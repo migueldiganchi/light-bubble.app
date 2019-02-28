@@ -5,7 +5,7 @@
     </h1>
     <b-container class="bv-example-row">
       <b-row align-h="center">
-        <b-col col offset-lg="4" lg="4">
+        <b-col xs="12" md="9" lg="5">
           <b-form @submit.prevent="onSubmit" @reset="onReset">
             <b-form-group id="NameGroup"
                           label="Nombre:"
@@ -59,8 +59,8 @@
             </b-form-group>
             <br>
             <div class="text-center">
-              <b-button type="submit" variant="primary">Crear cuenta</b-button>
               <b-button type="reset" variant="danger">Reiniciar</b-button>
+              <b-button type="submit" variant="primary">Crear cuenta</b-button>
             </div>
           </b-form>
           <br>
@@ -106,10 +106,25 @@ export default {
       })
         .then((response) => {
           console.log('response', response)
-          alert('are we signin up? This is great :D')
+          this.$eventHub.$emit('notify', {
+            message: 'El usuario se ha registrado exitosamente',
+            type: 'success'
+          });
+          // go dashboard
+          this.$router.push('/dashboard');
         })
         .catch((error) => {
-          console.info('error', error)
+          let message = ''
+          if (error.response.data.error.message == 'EMAIL_EXISTS') {
+            message = 'El correo electrónico ya se encuentra registrado';
+          } else {
+            message = 'Ha ocurrido un inconveniente con el registro';
+          }
+          console.info('error', error.response.data.message)
+          this.$eventHub.$emit('notify', {
+            message: message,
+            type: 'warning'
+          });
         })
     },
     onReset (evt) {
