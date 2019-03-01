@@ -15,18 +15,20 @@
       <div class="card-buttons">
         <b-button size="sm" 
           variant="success" 
+            @click="click"
           class="box-shadow">
             Votar
         </b-button>
         <b-button size="sm" 
           variant="info" 
+            @click="click"
           class="box-shadow">
             Donar
         </b-button>
         <b-button size="sm" 
-          variant="danger" 
+          @click="click"
           class="box-shadow">
-            Denunciar
+            Opinar
         </b-button>
       </div>
     </div>
@@ -56,6 +58,12 @@ export default {
       }
 
       return result;
+    },
+    click () {
+      this.$eventHub.$emit('notify', {
+        message: '@todo',
+        type: 'warning'
+      });
     }
   }
 }

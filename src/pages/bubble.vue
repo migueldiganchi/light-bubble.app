@@ -27,9 +27,8 @@
             class="box-shadow"
             @click="click">Donar</b-button>
           <b-button 
-            variant="danger" 
             class="box-shadow"
-            @click="click">Denunciar</b-button>
+            @click="click">Opinar</b-button>
         </div>
       </b-col>
     </b-row>

@@ -11,15 +11,11 @@
           <b-list-group-item 
             active
             href="#some-link">
-            Mis luces
+            Mis causas
           </b-list-group-item>
-          <b-list-group-item href="#">
-            Seguidores
-          </b-list-group-item>
-          <b-list-group-item href="#">
-            Siguiendo a
-          </b-list-group-item>
-          <b-list-group-item href="#foobar">
+          <b-list-group-item 
+            @click="settings"
+            href="#foobar">
             Configuración
           </b-list-group-item>
         </b-list-group>
@@ -28,7 +24,7 @@
       <b-col col xs="12" sm="12" md="12" lg="5" id="light_list" class="p-10 light-list">
         <div>
           <h4 class="pull-left px-3"  style="display: inline-block;">
-            Mis luces
+            Mis causas
           </h4>
           <small class="pull-right">Causas creadas por mi</small>
           <BubbleList :bubbles="myBubbles" />
@@ -81,6 +77,14 @@ export default {
     },
     otherBubbles () {
       return this.$store.getters.bubbles
+    }
+  },
+  methods: {
+    settings() {
+      this.$eventHub.$emit('notify', {
+        message: '@todo',
+        type: 'warning'
+      });
     }
   },
   created () {

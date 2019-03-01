@@ -10,13 +10,16 @@
         <b-list-group>
           <b-list-group-item href="#" active class="flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Últimas causas registradas</h5>
+              <h5 class="mb-1">Últimas causas</h5>
             </div>
             <p class="mb-1 mt-2">
               <small>Causas publicadas recientemente</small>
             </p>
           </b-list-group-item>
-          <b-list-group-item href="#" class="flex-column align-items-start">
+          <b-list-group-item 
+            @click="trends"
+            href="#" 
+            class="flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Tendencias</h5>
             </div>
@@ -24,7 +27,10 @@
               <small>Las causas con mayor cantidad de votos acumulados</small>
             </p>
           </b-list-group-item>
-          <b-list-group-item href="#" disabled class="flex-column align-items-start">
+          <b-list-group-item 
+            @click="categories"
+            href="#" 
+            class="flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Por categoría</h5>
             </div>
@@ -108,6 +114,18 @@ export default {
   },
   methods: {
     share () {
+      this.$eventHub.$emit('notify', {
+        message: '@todo',
+        type: 'warning'
+      });
+    },
+    trends () {
+      this.$eventHub.$emit('notify', {
+        message: '@todo',
+        type: 'warning'
+      });
+    },
+    categories () {
       this.$eventHub.$emit('notify', {
         message: '@todo',
         type: 'warning'

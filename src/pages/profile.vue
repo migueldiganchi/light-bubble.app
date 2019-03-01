@@ -2,7 +2,7 @@
   <div class="profile p-5">
     <div class="content text-center">
      <b-img rounded="circle"
-      blank
+      :src="'https://www.w3schools.com/howto/img_avatar.png'"
       width="75"
       height="75"
       blank-color="#777"
@@ -25,7 +25,7 @@ export default {
     return {
       user: {
         picture_url: '',
-        fullname: 'Miguel Diganchi',
+        fullname: 'Nombre usuario',
         description: 'Filantropo ocacional'
       }
     }
