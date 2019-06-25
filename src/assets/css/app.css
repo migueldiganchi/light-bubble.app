@@ -2,11 +2,16 @@ body {
 	width: 100wh;
 	height: 90vh;
 	color: #fff;
-	background: linear-gradient(-45deg, #9da0aa, #555, #9da0aa, #333);
-	background-size: 400% 400%;
+	background: linear-gradient(-45deg, #738cdd, #4e86b4, #5d7990, #cfc4f6);
+  background-size: 400% 400%;
+  
 	-webkit-animation: Gradient 15s ease infinite;
 	-moz-animation: Gradient 15s ease infinite;
 	animation: Gradient 15s ease infinite;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 1px #111 !important;
 }
 
 @-webkit-keyframes Gradient {
@@ -106,9 +111,8 @@ h1 {
 
 #presentation {
   transition: all 0.45s;
-  background: #2c3e50;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #333, #999);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #333, #999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: url(../media/bg-connections.png) no-repeat center;
+  background-size: cover;
   padding: 12px 0 36px !important;
   box-shadow: 0 3px 3px #111;
 }
