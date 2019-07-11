@@ -38,7 +38,7 @@ axios.interceptors.response.eject(responseInterceptor)
 new Vue({
   el: '#app',
   router,
-  store: store,
+  store,
   components: { App },
   template: '<App/>'
 })
